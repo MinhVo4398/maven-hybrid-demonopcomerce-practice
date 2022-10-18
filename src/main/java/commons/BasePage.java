@@ -446,6 +446,7 @@ public class BasePage {
     }
 
     // Ham moi
+    // Ham moi
     public String getElementValueByJSXpath(WebDriver driver, String xpathLocator) {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         xpathLocator = xpathLocator.replace("xpath=", "");
@@ -457,6 +458,12 @@ public class BasePage {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript("arguments[0].removeAttribute('" + attributeRemove + "');",
                 getWebElement(driver, locatorType));
+    }
+
+    public void removeAttributeInDOM(WebDriver driver, String locatorType, String attributeRemove, String... dynamicValues) {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("arguments[0].removeAttribute('" + attributeRemove + "');",
+                getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)));
     }
 
     public boolean areJQueryAndJSLoadedSuccess(WebDriver driver) {
