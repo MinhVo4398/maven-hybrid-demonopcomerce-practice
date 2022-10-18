@@ -1,4 +1,3 @@
-<!--
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE log4j:configuration SYSTEM "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
 
@@ -36,25 +35,18 @@
         </layout>
     </appender>
 
-    <category name="com.nopcommerce.user">
-        <priority value="all" />
-        <appender-ref ref="console" />
-        <appender-ref ref="logfile" />
-        <appender-ref ref="file" />
-        <appender-ref ref="testng" />
-    </category>
-
-    <category name="com.wordpress.admin">
-        <priority value="all" />
-        <appender-ref ref="console" />
-        <appender-ref ref="logfile" />
-        <appender-ref ref="file" />
-        <appender-ref ref="testng" />
-    </category>
+    <!--  <category name="com.usernopcommerce.register">
+          <priority value="all" />
+          <appender-ref ref="console" />
+          <appender-ref ref="logfile" />
+          <appender-ref ref="file" />
+          <appender-ref ref="testng" />
+      </category>
+  -->
 
 
     <root>
-        <priority value="info" />
+        <priority value="info"/>
     </root>
 
-</log4j:configuration>-->
+</log4j:configuration>

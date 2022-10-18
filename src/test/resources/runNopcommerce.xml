@@ -1,12 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="DomoNopcommerce Project">
+<suite parallel="tests" thread-count="2" name="NopComerce_Demo_Local">
 
-    <test name="Run on Chrome">
+    <listeners>
+        <listener class-name="reportConfig.ExtentTestListener"/>
+    </listeners>
+
+    <!-- Global-->
+    <parameter name="envName" value="local"/>
+    <parameter name="serverName" value="dev"/>
+
+    <test name="Run on CHROME">
+        <parameter name="browser" value="chrome"/>
         <classes>
-           <!-- <class name="package.firstClassName" />
-            <class name="package.secondClassName" />-->
+            <class name="com.usernopcommerce.register.RegisterFunction"/>
         </classes>
     </test>
+
+
+    <!--  <test name="Run on FIREFOX">
+         <parameter name="browser" value="firefox"/>
+         <classes>
+             <class name="com.usernopcommerce.register.RegisterFunction"/>
+         </classes>
+      </test>-->
+
+    <test name="Run on EDGE">
+        <parameter name="browser" value="EDGE_CHROMIUM"/>
+        <classes>
+            <class name="com.usernopcommerce.register.RegisterFunction"/>
+        </classes>
+    </test>
+
 
 </suite>

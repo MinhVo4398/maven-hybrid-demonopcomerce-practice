@@ -25,8 +25,6 @@
         <testng.version>6.14.3</testng.version>
         <jackson.version>2.10.0</jackson.version>
         <webdrivermanager.version>5.0.2</webdrivermanager.version>
-        <aspectj.version>1.9.8</aspectj.version>
-        <allure.version>2.18.1</allure.version>
         <extent.version>5.0.8</extent.version>
         <faker.version>1.0.1</faker.version>
         <log4j.version>1.2.16</log4j.version>
@@ -133,14 +131,11 @@
         </dependency>
 
 
-
         <dependency>
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
             <version>${faker.version}</version>
         </dependency>
-
-
 
 
         <!-- https://mvnrepository.com/artifact/org.aeonbits.owner/owner -->
@@ -149,9 +144,6 @@
             <artifactId>owner</artifactId>
             <version>1.0.12</version>
         </dependency>
-
-
-
 
 
     </dependencies>
@@ -190,7 +182,6 @@
             </plugin>
         </plugins>
     </build>
-
 
 
 </project>
