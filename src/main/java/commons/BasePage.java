@@ -326,12 +326,10 @@ public class BasePage {
 
     public boolean isElementDisplayed(WebDriver driver, String locatorType) {
         try {
-            // tìm thấy element
-            //Case 1: Displayed - trả về true
-            //Case 2:Undisplayed - trả về false
+
             return getWebElement(driver, locatorType).isDisplayed();
         } catch (NoSuchElementException e) {
-            //Case 3 :Undisplayed - trả về false
+
             return false;
         }
 
@@ -349,17 +347,14 @@ public class BasePage {
         List<WebElement> elements = getListWebElement(driver, locatorType);
 
         // Nếu như mình gán = 5 thì nó sẽ apply cho các step về sau đó: findElement/ findElements
-        overrideImplicitTimeout(driver, GlobalConstants.LONG_TIMEOUT);
+        overrideImplicitTimeout(driver, GlobalConstants.SHORT_TIMEOUT);
 
         if (elements.size() == 0) {
             System.out.println("Case 3 - Element không có trong DOM");
             System.out.println("End time = " + new Date().toString());
-            // return true vì mong đợi hàm k hiển thị
+
             return true;
-        }
-        // nó có kích thước =1 (có trong DOM)
-        // ko dc hiển thị (display)
-        else if (elements.size() > 0 && !elements.get(0).isDisplayed()) {
+        } else if (elements.size() > 0 && !elements.get(0).isDisplayed()) {
             System.out.println("Case 2 : Element có trong DOM nhưng ko visible /displayed");
             System.out.println("End time = " + new Date().toString());
             return true;
@@ -375,7 +370,7 @@ public class BasePage {
         List<WebElement> elements = getListWebElement(driver, getDynamicXpath(locatorType, dynamicValues));
 
         // Nếu như mình gán = 5 thì nó sẽ apply cho các step về sau đó: findElement/ findElements
-        overrideImplicitTimeout(driver, GlobalConstants.LONG_TIMEOUT);
+        overrideImplicitTimeout(driver, GlobalConstants.SHORT_TIMEOUT);
 
         if (elements.size() == 0) {
             return true;
@@ -450,6 +445,7 @@ public class BasePage {
         jsExecutor.executeScript("arguments[0].scrollIntoView(true);", getWebElement(driver, locatorType));
     }
 
+    // Ham moi
     public String getElementValueByJSXpath(WebDriver driver, String xpathLocator) {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         xpathLocator = xpathLocator.replace("xpath=", "");
@@ -564,8 +560,6 @@ public class BasePage {
 
     public void waitForElementClickable(WebDriver driver, String locatorType, String... dynamicValues) {
         WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
-        //locatorType = xpath=//li[@class='qgrd-pagination-page']/a[text()='%s
-        // dynamicValues = 10
         explicitWait.until(
                 ExpectedConditions.elementToBeClickable(getByLocator(getDynamicXpath(locatorType, dynamicValues))));
     }
