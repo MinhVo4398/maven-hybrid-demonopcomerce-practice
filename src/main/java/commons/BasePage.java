@@ -187,7 +187,7 @@ public class BasePage {
     }
 
 
-    public void sendkeyToElement(WebDriver driver, String locatorType, String textValue) {
+    public void sendKeyToElement(WebDriver driver, String locatorType, String textValue) {
         // clear truoc khi sendKey
         WebElement element = getWebElement(driver, locatorType);
         element.clear();
@@ -195,7 +195,7 @@ public class BasePage {
 
     }
 
-    public void sendkeyToElement(WebDriver driver, String locatorType, String textValue, String... dynamicValue) {
+    public void sendKeyToElement(WebDriver driver, String locatorType, String textValue, String... dynamicValue) {
         WebElement element = getWebElement(driver, getDynamicXpath(locatorType, dynamicValue));
         element.clear();
         element.sendKeys(textValue);

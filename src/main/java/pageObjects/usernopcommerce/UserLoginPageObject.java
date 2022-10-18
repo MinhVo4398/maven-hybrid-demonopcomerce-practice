@@ -25,13 +25,13 @@ public class UserLoginPageObject extends BasePage {
 
     public void inputToEmailTextbox(String emailAddress) {
         waitForElementVisible(driver, LoginPageUI.EMAIL_TEXTBOX);
-        sendkeyToElement(driver, LoginPageUI.EMAIL_TEXTBOX, emailAddress);
+        sendKeyToElement(driver, LoginPageUI.EMAIL_TEXTBOX, emailAddress);
     }
 
 
     public void inputToPasswordTextbox(String password) {
         waitForElementVisible(driver, LoginPageUI.PASSWORD_TEXTBOX);
-        sendkeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, password);
+        sendKeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, password);
     }
 
     public String getErrorMessageAtEmailTextBox() {

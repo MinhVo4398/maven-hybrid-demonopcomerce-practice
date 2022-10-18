@@ -51,30 +51,30 @@ public class UserRegisterPageObject extends BasePage {
 
     public void inputToFirstNameTextbox(String firstName) {
         waitForElementVisible(driver, RegisterPageUI.FIRST_NAME_TEXTBOX);
-        sendkeyToElement(driver, RegisterPageUI.FIRST_NAME_TEXTBOX, firstName);
+        sendKeyToElement(driver, RegisterPageUI.FIRST_NAME_TEXTBOX, firstName);
     }
 
     public void inputToLastNameTextbox(String lastName) {
         waitForElementVisible(driver, RegisterPageUI.LAST_NAME_TEXTBOX);
-        sendkeyToElement(driver, RegisterPageUI.LAST_NAME_TEXTBOX, lastName);
+        sendKeyToElement(driver, RegisterPageUI.LAST_NAME_TEXTBOX, lastName);
     }
 
 
     public void inputToEmailTextbox(String emailAddres) {
         waitForElementVisible(driver, RegisterPageUI.EMAIL_TEXTBOX);
-        sendkeyToElement(driver, RegisterPageUI.EMAIL_TEXTBOX, emailAddres);
+        sendKeyToElement(driver, RegisterPageUI.EMAIL_TEXTBOX, emailAddres);
     }
 
 
     public void inputToPasswordTextbox(String password) {
         waitForElementVisible(driver, RegisterPageUI.PASSWORD_TEXTBOX);
-        sendkeyToElement(driver, RegisterPageUI.PASSWORD_TEXTBOX, password);
+        sendKeyToElement(driver, RegisterPageUI.PASSWORD_TEXTBOX, password);
     }
 
 
     public void inputToConfirmPasswordTextbox(String confirmPassword) {
         waitForElementVisible(driver, RegisterPageUI.CONFIRM_PASSWORD_TEXTBOX);
-        sendkeyToElement(driver, RegisterPageUI.CONFIRM_PASSWORD_TEXTBOX, confirmPassword);
+        sendKeyToElement(driver, RegisterPageUI.CONFIRM_PASSWORD_TEXTBOX, confirmPassword);
     }
 
 
