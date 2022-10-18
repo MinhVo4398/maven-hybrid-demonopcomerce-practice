@@ -171,8 +171,8 @@
                 <configuration>
                     <!-- Run TestNG xml file -->
                     <suiteXmlFiles>
-                        <!-- <suiteXmlFile>src/test/resources/runNopCommerceUser.xml</suiteXmlFile>-->
-                        <suiteXmlFile>environmentRunner/${environment}.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/runNopcommerce.xml</suiteXmlFile>
+                        <!-- <suiteXmlFile>environmentRunner/${environment}.xml</suiteXmlFile>-->
                     </suiteXmlFiles>
 
 
