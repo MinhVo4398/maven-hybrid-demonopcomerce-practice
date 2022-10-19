@@ -13,7 +13,7 @@
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.usernopcommerce.register.Register_Success_Global"/>
-            <class name="com.usernopcommerce.myaccount.MyAccountFunctionTest"/>
+            <class name="com.usernopcommerce.myaccount.MyAccountFunction"/>
         </classes>
     </test>
 

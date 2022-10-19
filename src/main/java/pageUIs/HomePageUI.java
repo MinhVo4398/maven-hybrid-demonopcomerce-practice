@@ -9,4 +9,5 @@ public class HomePageUI {
     public static final String REVIEW_TITLE = "xpath=//input[@class='review-title']";
     public static final String REVIEW_TEXT = "xpath=//textarea[@class='review-text']";
     public static final String SUBMIT_REVIEW_BUTTON = "xpath=//button[@name='add-review']";
+    public static final String SEARCH_LINK = "xpath=//div[contains(@class,'customer-service')]//a[text()='Search']";
 }

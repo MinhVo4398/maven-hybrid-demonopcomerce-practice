@@ -70,5 +70,11 @@ public class UserHomePageObject extends BasePage {
         waitForElementClickable(driver, HomePageUI.SUBMIT_REVIEW_BUTTON);
         clickToElement(driver, HomePageUI.SUBMIT_REVIEW_BUTTON);
     }
+
+    public UserSearchPageObject clickToSearchLink() {
+        waitForElementClickable(driver, HomePageUI.SEARCH_LINK);
+        clickToElement(driver, HomePageUI.SEARCH_LINK);
+        return PageGeneratorManager.getUserSearchPage(driver);
+    }
 }
 

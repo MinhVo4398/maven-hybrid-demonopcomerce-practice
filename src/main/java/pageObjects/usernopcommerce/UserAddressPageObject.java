@@ -105,25 +105,20 @@ public class UserAddressPageObject extends BasePage {
         return getElementText(driver, AddressPageUI.ADDRESS_NAME);
     }
 
-    public boolean isEmailDisplayed(String emmail) {
-        waitForElementVisible(driver, AddressPageUI.ADDRESS_EMAIL, emmail);
-        return isElementDisplayed(driver, AddressPageUI.ADDRESS_EMAIL, emmail);
+    public String isEmailDisplayed() {
+        waitForElementVisible(driver, AddressPageUI.ADDRESS_EMAIL);
+        return getElementText(driver, AddressPageUI.ADDRESS_EMAIL);
     }
 
     public String isPhoneNumberDisplayed() {
+        waitForElementVisible(driver, AddressPageUI.ADDRESS_PHONE_NUMBER);
 
-        try {
-            waitForElementVisible(driver, AddressPageUI.ADDRESS_PHONE_NUMBER);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         return getElementText(driver, AddressPageUI.ADDRESS_PHONE_NUMBER);
     }
 
-    public boolean isFaxNumberDisplayed(String faxNumber) {
-        waitForElementVisible(driver, AddressPageUI.ADDRESS_FAX, faxNumber);
-        return isElementDisplayed(driver, AddressPageUI.ADDRESS_FAX, faxNumber);
+    public String isFaxNumberDisplayed() {
+        waitForElementVisible(driver, AddressPageUI.ADDRESS_FAX);
+        return getElementText(driver, AddressPageUI.ADDRESS_FAX);
     }
 
     public String isCompanyDisplayed() {
@@ -141,9 +136,9 @@ public class UserAddressPageObject extends BasePage {
         return getElementText(driver, AddressPageUI.ADDRESS2);
     }
 
-    public boolean isZipCodeDisplayed(String zipCode) {
-        waitForElementVisible(driver, AddressPageUI.ADRESS_ZIP, zipCode);
-        return isElementDisplayed(driver, AddressPageUI.ADRESS_ZIP, zipCode);
+    public String isZipCodeDisplayed() {
+        waitForElementVisible(driver, AddressPageUI.ADRESS_ZIP);
+        return getElementText(driver, AddressPageUI.ADRESS_ZIP);
     }
 
     public String isCountryDisplayed() {

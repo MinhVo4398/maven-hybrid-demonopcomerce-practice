@@ -9,7 +9,7 @@ import org.testng.annotations.*;
 import pageObjects.usernopcommerce.*;
 import utilities.DataHelper;
 
-public class MyAccountFunctionTest extends BaseTest {
+public class MyAccountFunction extends BaseTest {
     WebDriver driver;
     private String firstName, lastName, emailAddress, updatedEmail, day, month, year, compayName, password, confirmPassword,
             addressFirstName, addressLastName, addressEmail, addressCompany, addressCountry, addressState, addressCity, address1, address2,
@@ -120,10 +120,10 @@ public class MyAccountFunctionTest extends BaseTest {
         addressPage.clickToSaveButton();
 
         Assert.assertEquals(addressPage.isNameDisplayed(), addressFirstName + " " + addressLastName);
-        // Assert.assertEquals(addressPage.isPhoneNumberDisplayed(),addressPhoneNumber);
-       /* Assert.assertTrue(addressPage.isEmailDisplayed(addressEmail));
-        Assert.assertTrue(addressPage.isFaxNumberDisplayed(addressFaxNumber));
-        Assert.assertTrue(addressPage.isZipCodeDisplayed(addressZip));*/
+        Assert.assertEquals(addressPage.isPhoneNumberDisplayed(), "Phone number: " + addressPhoneNumber);
+        Assert.assertEquals(addressPage.isEmailDisplayed(), "Email: " + addressEmail);
+        Assert.assertEquals(addressPage.isFaxNumberDisplayed(), "Fax number: " + addressFaxNumber);
+        Assert.assertEquals(addressPage.isZipCodeDisplayed(), addressCity + ", " + addressZip);
 
         Assert.assertEquals(addressPage.isCompanyDisplayed(), addressCompany);
         Assert.assertEquals(addressPage.isStreet1Displayed(), address1);
@@ -133,7 +133,7 @@ public class MyAccountFunctionTest extends BaseTest {
 
     }
 
-    @Test
+
     public void TC_03_My_Product_Review() {
         //Address hover vào computer -> click desktop => homePage
         homePage = addressPage.clickToComputerProductLink();

@@ -35,5 +35,8 @@ public class PageGeneratorManager {
         return new UserRewardPointPageObject(driver);
     }
 
+    public static UserSearchPageObject getUserSearchPage(WebDriver driver) {
+        return new UserSearchPageObject(driver);
+    }
 
 }
