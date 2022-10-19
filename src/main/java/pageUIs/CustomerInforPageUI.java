@@ -1,8 +1,8 @@
 package pageUIs;
 
 public class CustomerInforPageUI {
-    public static final String ADDRESS_LINK = "xpath=//div[@class='listbox']//a[text()='Addresses']";
-    public static final String MY_PRODUCT_REVIEW_LINK = "xpath=//div[@class='listbox']//a[text()='My product reviews']";
+
+
     public static final String CUSTOMER_INFO_HEADER = "xpath=//div[@class='page-title']/h1[text()='My account - Customer info']";
     public static final String FIRST_NAME_TEXTBOX = "xpath=//input[@id='FirstName']";
     public static final String MALE_RADIO_BUTTON = "xpath=//input[@id='gender-male']";

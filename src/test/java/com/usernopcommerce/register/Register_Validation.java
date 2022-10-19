@@ -13,7 +13,7 @@ import utilities.DataHelper;
 
 import java.lang.reflect.Method;
 
-public class Register extends BaseTest {
+public class Register_Validation extends BaseTest {
 
     private WebDriver driver;
     private String firstName, lastName, validPassword, emailAddress, invalidEmail, invalidPassword;

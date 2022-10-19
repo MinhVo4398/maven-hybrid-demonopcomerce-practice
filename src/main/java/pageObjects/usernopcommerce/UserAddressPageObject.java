@@ -111,7 +111,13 @@ public class UserAddressPageObject extends BasePage {
     }
 
     public String isPhoneNumberDisplayed() {
-        waitForElementVisible(driver, AddressPageUI.ADDRESS_PHONE_NUMBER);
+
+        try {
+            waitForElementVisible(driver, AddressPageUI.ADDRESS_PHONE_NUMBER);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return getElementText(driver, AddressPageUI.ADDRESS_PHONE_NUMBER);
     }
 

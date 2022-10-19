@@ -18,7 +18,7 @@ public class AddressPageUI {
 
     public static final String ADDRESS_NAME = "xpath=//ul[@class='info']/li[@class='name']";
     public static final String ADDRESS_EMAIL = "xpath=//ul[@class='info']/li[@class='email' and contains(text(),'%s')]";
-    public static final String ADDRESS_PHONE_NUMBER = "xpath=//ul[@class='info']/li[@class='phone']/label";
+    public static final String ADDRESS_PHONE_NUMBER = "xpath=//ul[@class='info']/li[@class='phone']/label/following-sibling::*";
     public static final String ADDRESS_FAX = "xpath=//ul[@class='info']/li[@class='fax' and contains(text(),' %s')]";
     public static final String ADDRESS_COMPANY = "xpath=//ul[@class='info']/li[@class='company']";
     public static final String ADDRESS1 = "xpath=//ul[@class='info']/li[@class='address1']";

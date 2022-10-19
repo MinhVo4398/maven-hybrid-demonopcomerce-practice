@@ -1,5 +1,6 @@
 package com.usernopcommerce.myaccount;
 
+import com.usernopcommerce.register.Register_Success_Global;
 import commons.BaseTest;
 import commons.PageGeneratorManager;
 import org.openqa.selenium.WebDriver;
@@ -8,7 +9,7 @@ import org.testng.annotations.*;
 import pageObjects.usernopcommerce.*;
 import utilities.DataHelper;
 
-public class MyAccountFunction extends BaseTest {
+public class MyAccountFunctionTest extends BaseTest {
     WebDriver driver;
     private String firstName, lastName, emailAddress, updatedEmail, day, month, year, compayName, password, confirmPassword,
             addressFirstName, addressLastName, addressEmail, addressCompany, addressCountry, addressState, addressCity, address1, address2,
@@ -31,11 +32,11 @@ public class MyAccountFunction extends BaseTest {
         year = "1979";
         firstName = dataHelper.getFirstName();
         lastName = dataHelper.getLastName();
-        emailAddress = dataHelper.getEmailAddress();
+        /*  emailAddress = dataHelper.getEmailAddress();*/
         compayName = dataHelper.getCompanyName();
-        password = dataHelper.getPassword();
+        /* password = dataHelper.getPassword();*/
         confirmPassword = dataHelper.getPassword();
-        // Precondition - Register success- login
+        // Precondition - Register success
 
         addressFirstName = dataHelper.getFirstName();
         addressLastName = dataHelper.getLastName();
@@ -55,24 +56,16 @@ public class MyAccountFunction extends BaseTest {
         driver = getBrowserDriver(envName, serverName, browserName, ipAddress, portNumber, osName, osVersion);
         homePage = PageGeneratorManager.getUserHomePage(driver);
 
-        registerPage = homePage.openRegisterPage();
 
-        registerPage.checkToMaleGenderRadiobutton();
-        registerPage.inputToFirstNameTextbox(firstName);
-        registerPage.inputToLastNameTextbox(lastName);
-        registerPage.selectDayDropdown(day);
-        registerPage.selectMonthDropdown(month);
-        registerPage.selectYearDropdown(year);
-        registerPage.inputToEmailTextbox(emailAddress);
-        registerPage.inputToPasswordTextbox(password);
-        registerPage.inputToConfirmPasswordTextbox(password);
-        registerPage.clickToRegisterButton();
-
-        homePage = registerPage.clickToLogoutLink();
-
+        // Login
+        emailAddress = Register_Success_Global.EMAIL_ADDRESS;
+        password = Register_Success_Global.EMAIL_ADDRESS;
         loginPage = homePage.openLoginPage();
-        loginPage.inputToEmailTextbox(emailAddress);
-        loginPage.inputToPasswordTextbox(password);
+
+        loginPage.inputToEmailTextbox(Register_Success_Global.EMAIL_ADDRESS);
+
+        loginPage.inputToPasswordTextbox(Register_Success_Global.PASSWORD);
+
 
         homePage = loginPage.clickToLoginButton();
 
@@ -91,7 +84,6 @@ public class MyAccountFunction extends BaseTest {
         customerInforPage.selectYearDropdown("1991");
         customerInforPage.inputToEmailAddress(updatedEmail);
         customerInforPage.inputToCompanyNameTextbox(compayName);
-        sleepInSecond(5);
         customerInforPage.clickToSaveButton();
 
         // Verify update thanh cong

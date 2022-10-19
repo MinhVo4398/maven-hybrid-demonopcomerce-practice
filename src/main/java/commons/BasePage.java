@@ -10,7 +10,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjects.usernopcommerce.UserAddressPageObject;
+import pageObjects.usernopcommerce.UserCustomerInforPageObject;
 import pageObjects.usernopcommerce.UserMyProductReviewPageObject;
+import pageObjects.usernopcommerce.UserRewardPointPageObject;
+import pageUIs.BasePageNopCommerceUI;
 import pageUIs.CustomerInforPageUI;
 
 import java.util.Date;
@@ -18,7 +21,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-public class BasePage {
+public class BasePage extends BasePageNopCommerceUI {
 
     public static BasePage getBaseObject() {
         return new BasePage();
@@ -592,15 +595,31 @@ public class BasePage {
 
     //Common Page
     public UserAddressPageObject openAddressPage(WebDriver driver) {
-        waitForElementClickable(driver, CustomerInforPageUI.ADDRESS_LINK);
-        clickToElement(driver, CustomerInforPageUI.ADDRESS_LINK);
+        waitForElementClickable(driver, BasePageNopCommerceUI.ADDRESS_LINK);
+        clickToElement(driver, BasePageNopCommerceUI.ADDRESS_LINK);
         return PageGeneratorManager.getUserAddressPage(driver);
     }
 
     public UserMyProductReviewPageObject openMyProductReviewPage(WebDriver driver) {
-        waitForElementClickable(driver, CustomerInforPageUI.MY_PRODUCT_REVIEW_LINK);
-        clickToElement(driver, CustomerInforPageUI.MY_PRODUCT_REVIEW_LINK);
+        waitForElementClickable(driver, BasePageNopCommerceUI.MY_PRODUCT_REVIEW_LINK);
+        clickToElement(driver, BasePageNopCommerceUI.MY_PRODUCT_REVIEW_LINK);
         return PageGeneratorManager.getUserMyProductReviewPage(driver);
 
     }
+
+    public UserRewardPointPageObject openRewardPoint(WebDriver driver) {
+        waitForElementClickable(driver, BasePageNopCommerceUI.REWARD_POINT_LINK);
+        clickToElement(driver, BasePageNopCommerceUI.REWARD_POINT_LINK);
+        return PageGeneratorManager.getUserRewardPointPage(driver);
+
+    }
+
+    public UserCustomerInforPageObject openCustomerInforPage(WebDriver driver) {
+        waitForElementClickable(driver, BasePageNopCommerceUI.CUSTOMER_INFOR_LINK);
+        clickToElement(driver, BasePageNopCommerceUI.CUSTOMER_INFOR_LINK);
+        return PageGeneratorManager.getUserCustomerInforPage(driver);
+
+    }
+
+
 }

@@ -12,26 +12,12 @@
     <test name="Run on CHROME">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="com.usernopcommerce.myaccount.MyAccountFunction"/>
+            <class name="com.usernopcommerce.register.Register_Success_Global"/>
+            <class name="com.usernopcommerce.myaccount.MyAccountFunctionTest"/>
         </classes>
     </test>
 
 
-    <!--  <test name="Run on FIREFOX">
-         <parameter name="browser" value="firefox"/>
-         <classes>
-             <class name="com.usernopcommerce.register.RegisterFunction"/>
-         </classes>
-      </test>-->
-
-    <!--
-        <test name="Run on EDGE">
-            <parameter name="browser" value="EDGE_CHROMIUM"/>
-            <classes>
-                <class name="com.usernopcommerce.register.RegisterFunction"/>
-            </classes>
-        </test>
-    -->
 
 
 </suite>
