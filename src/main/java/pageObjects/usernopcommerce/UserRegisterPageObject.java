@@ -87,7 +87,7 @@ public class UserRegisterPageObject extends BasePage {
     public UserHomePageObject clickToLogoutLink() {
         waitForElementClickable(driver, RegisterPageUI.LOGOUT_LINK);
         clickToElement(driver, RegisterPageUI.LOGOUT_LINK);
-        //2 return new HomePageObject(driver);
+
         return PageGeneratorManager.getUserHomePage(driver);
     }
 
@@ -97,4 +97,24 @@ public class UserRegisterPageObject extends BasePage {
     }
 
 
+    public void checkToMaleGenderRadiobutton() {
+
+        checkToDefaultCheckboxRadio(driver, RegisterPageUI.GENDER_RADIOBUTTON);
+    }
+
+    public void selectDay(String textItem) {
+        waitForElementVisible(driver, RegisterPageUI.DATE_DROPDOWN);
+        selectItemInDefaultDropdown(driver, RegisterPageUI.DATE_DROPDOWN, textItem);
+
+    }
+
+    public void selectMonth(String textItem) {
+        waitForElementVisible(driver, RegisterPageUI.MONTH_DROPDOWN);
+        selectItemInDefaultDropdown(driver, RegisterPageUI.MONTH_DROPDOWN, textItem);
+    }
+
+    public void selectYear(String textItem) {
+        waitForElementVisible(driver, RegisterPageUI.YEAR_DROPDOWN);
+        selectItemInDefaultDropdown(driver, RegisterPageUI.YEAR_DROPDOWN, textItem);
+    }
 }

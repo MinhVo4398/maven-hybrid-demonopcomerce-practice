@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class BaseTest {
     private WebDriver driver;
 
+
     public WebDriver getDriverInstance() {
         return this.driver;
     }
@@ -231,6 +232,15 @@ public class BaseTest {
     protected String getCurrentDay() {
         return getCurrentDate() + "/" + getCurrentMonth() + "/" + getCurrentYear();
     }
+
+    public void sleepInSecond(long time) {
+        try {
+            Thread.sleep(time * 1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
 }
 

@@ -17,6 +17,10 @@ public class RegisterPageUI {
     public final static String REGISTER_SUCCESS_MESSAGE = "xpath=//div[@class='result']";
     public final static String LOGOUT_LINK = "xpath=//a[@class='ico-logout']";
     public final static String EXISTING_EMAIL_ERROR_MESSAGE = "xpath=//div[contains(@class,'message-error')]//li";
+    public final static String GENDER_RADIOBUTTON = "xpath=//label[text()='Male']/parent::span/input[@id='gender-male']";
+    public final static String DATE_DROPDOWN = "xpath=//select[@name='DateOfBirthDay']";
+    public final static String MONTH_DROPDOWN = "xpath=//select[@name='DateOfBirthMonth']";
+    public final static String YEAR_DROPDOWN = "xpath=//select[@name='DateOfBirthYear']";
 
 
 }

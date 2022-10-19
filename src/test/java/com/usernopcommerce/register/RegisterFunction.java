@@ -41,7 +41,7 @@ public class RegisterFunction extends BaseTest {
     public void User_01_Register(Method method) {
         ExtentTestManager.startTest(method.getName(), "Register to system with valid Email and Password");
         ExtentTestManager.getTest().log(Status.INFO, "Register - Step 01: Navigate to 'Register' page ");
-        registerPage = homePage.openRegisterPage(); // B= A.action
+        registerPage = homePage.openRegisterPage();
 
         ExtentTestManager.getTest().log(Status.INFO, "Register - Step 02: Input to Firstname textbox" + firstName);
         registerPage.inputToFirstNameTextbox(firstName);
@@ -70,8 +70,8 @@ public class RegisterFunction extends BaseTest {
 
     @AfterClass
     public void afterClass() {
-        /* closeBrowserAndDriver("dev");*/
-        driver.quit();
+        closeBrowserAndDriver("local");
+
     }
 
 }

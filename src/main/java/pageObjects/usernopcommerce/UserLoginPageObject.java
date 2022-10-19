@@ -58,4 +58,9 @@ public class UserLoginPageObject extends BasePage {
         waitForElementVisible(driver, LoginPageUI.STREET_ADDRESS_TEXTBOX);
         return getElementValueByJSXpath(driver, LoginPageUI.STREET_ADDRESS_TEXTBOX);
     }
+
+    public void clickTologinLink() {
+        waitForElementClickable(driver, LoginPageUI.LOGIN_LINK);
+        clickToElement(driver, LoginPageUI.LOGIN_LINK);
+    }
 }
