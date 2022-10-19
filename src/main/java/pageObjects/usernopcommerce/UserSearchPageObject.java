@@ -54,4 +54,19 @@ public class UserSearchPageObject extends BasePage {
         selectItemInDefaultDropdown(driver, SearchPageUI.CATEGORY_DROPDOWN, textItem);
 
     }
+
+    public void checkToSubCategory() {
+        waitForElementVisible(driver, SearchPageUI.SEARCH_SUB_CATEGORIES_CHECKBOX);
+        checkToDefaultCheckboxRadio(driver, SearchPageUI.SEARCH_SUB_CATEGORIES_CHECKBOX);
+    }
+
+    public boolean isMacbookProductDisplayed() {
+        waitForElementVisible(driver, SearchPageUI.APPLE_PRODUCT);
+        return isElementDisplayed(driver, SearchPageUI.APPLE_PRODUCT);
+    }
+
+    public void selectManufacturer(String textItem) {
+        waitForElementVisible(driver, SearchPageUI.MANUFACTURER_DROPDOWN);
+        selectItemInDefaultDropdown(driver, SearchPageUI.MANUFACTURER_DROPDOWN, textItem);
+    }
 }
