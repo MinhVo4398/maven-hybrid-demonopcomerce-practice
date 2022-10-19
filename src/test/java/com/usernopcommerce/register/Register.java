@@ -104,9 +104,9 @@ public class Register extends BaseTest {
         registerPage.checkToMaleGenderRadiobutton();
 
         ExtentTestManager.getTest().log(Status.INFO, "Register - Step 03: Select day - month - year ");
-        registerPage.selectDay("10");
-        registerPage.selectMonth("May");
-        registerPage.selectYear("1970");
+        registerPage.selectDayDropdown("10");
+        registerPage.selectMonthDropdown("May");
+        registerPage.selectYearDropdown("1970");
 
         ExtentTestManager.getTest().log(Status.INFO, "Register - Step 04: Input to email address ");
         registerPage.inputToEmailTextbox(emailAddress);
@@ -144,9 +144,9 @@ public class Register extends BaseTest {
         registerPage.inputToLastNameTextbox(lastName);
 
         ExtentTestManager.getTest().log(Status.INFO, "Register - Step 05: Select day - month - year ");
-        registerPage.selectDay("10");
-        registerPage.selectMonth("May");
-        registerPage.selectYear("1970");
+        registerPage.selectDayDropdown("10");
+        registerPage.selectMonthDropdown("May");
+        registerPage.selectYearDropdown("1970");
 
         ExtentTestManager.getTest().log(Status.INFO, "Register - Step 06: Input to email address ");
         registerPage.inputToEmailTextbox(emailAddress);
@@ -183,9 +183,9 @@ public class Register extends BaseTest {
         registerPage.inputToLastNameTextbox(lastName);
 
         ExtentTestManager.getTest().log(Status.INFO, "Register - Step 05: Select day - month - year ");
-        registerPage.selectDay("10");
-        registerPage.selectMonth("May");
-        registerPage.selectYear("1970");
+        registerPage.selectDayDropdown("10");
+        registerPage.selectMonthDropdown("May");
+        registerPage.selectYearDropdown("1970");
 
         ExtentTestManager.getTest().log(Status.INFO, "Register - Step 06: Input to email address ");
         registerPage.inputToEmailTextbox(emailAddress);

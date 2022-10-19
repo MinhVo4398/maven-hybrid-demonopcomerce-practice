@@ -12,7 +12,7 @@
     <test name="Run on CHROME">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="com.usernopcommerce.login.LoginFunction"/>
+            <class name="com.usernopcommerce.myaccount.MyAccountFunction"/>
         </classes>
     </test>
 

@@ -19,8 +19,6 @@ public class UserHomePageObject extends BasePage {
     public UserRegisterPageObject openRegisterPage() {
         waitForElementClickable(driver, HomePageUI.REGISTER_LINK);
         clickToElement(driver, HomePageUI.REGISTER_LINK);
-
-
         return PageGeneratorManager.getUserRegisterPage(driver);
 
     }
@@ -41,10 +39,36 @@ public class UserHomePageObject extends BasePage {
 
 
     public UserCustomerInforPageObject openMyAccountPage() {
-        waitForElementVisible(driver, HomePageUI.MY_ACCOUNT_LINK);
+        waitForElementClickable(driver, HomePageUI.MY_ACCOUNT_LINK);
         clickToElement(driver, HomePageUI.MY_ACCOUNT_LINK);
         return PageGeneratorManager.getUserCustomerInforPage(driver);
 
+    }
+
+
+    public void clickToComputerProduct() {
+        waitForElementClickable(driver, HomePageUI.OWN_COMPUTER_PRODUCT_LINK);
+        clickToElement(driver, HomePageUI.OWN_COMPUTER_PRODUCT_LINK);
+    }
+
+    public void clickToAddYourReviewLink() {
+        waitForElementClickable(driver, HomePageUI.ADD_YOUR_REVIEW_LINK);
+        clickToElement(driver, HomePageUI.ADD_YOUR_REVIEW_LINK);
+    }
+
+    public void inputToReviewTitle(String textValue) {
+        waitForElementVisible(driver, HomePageUI.REVIEW_TITLE);
+        sendKeyToElement(driver, HomePageUI.REVIEW_TITLE, textValue);
+    }
+
+    public void inputToReviewText(String textValue) {
+        waitForElementVisible(driver, HomePageUI.REVIEW_TEXT);
+        sendKeyToElement(driver, HomePageUI.REVIEW_TEXT, textValue);
+    }
+
+    public void clickToSubmitReviewButton() {
+        waitForElementClickable(driver, HomePageUI.SUBMIT_REVIEW_BUTTON);
+        clickToElement(driver, HomePageUI.SUBMIT_REVIEW_BUTTON);
     }
 }
 

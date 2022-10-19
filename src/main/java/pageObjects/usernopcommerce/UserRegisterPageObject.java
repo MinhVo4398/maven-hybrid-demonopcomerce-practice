@@ -54,6 +54,7 @@ public class UserRegisterPageObject extends BasePage {
         sendKeyToElement(driver, RegisterPageUI.FIRST_NAME_TEXTBOX, firstName);
     }
 
+
     public void inputToLastNameTextbox(String lastName) {
         waitForElementVisible(driver, RegisterPageUI.LAST_NAME_TEXTBOX);
         sendKeyToElement(driver, RegisterPageUI.LAST_NAME_TEXTBOX, lastName);
@@ -102,18 +103,18 @@ public class UserRegisterPageObject extends BasePage {
         checkToDefaultCheckboxRadio(driver, RegisterPageUI.GENDER_RADIOBUTTON);
     }
 
-    public void selectDay(String textItem) {
+    public void selectDayDropdown(String textItem) {
         waitForElementVisible(driver, RegisterPageUI.DATE_DROPDOWN);
         selectItemInDefaultDropdown(driver, RegisterPageUI.DATE_DROPDOWN, textItem);
 
     }
 
-    public void selectMonth(String textItem) {
+    public void selectMonthDropdown(String textItem) {
         waitForElementVisible(driver, RegisterPageUI.MONTH_DROPDOWN);
         selectItemInDefaultDropdown(driver, RegisterPageUI.MONTH_DROPDOWN, textItem);
     }
 
-    public void selectYear(String textItem) {
+    public void selectYearDropdown(String textItem) {
         waitForElementVisible(driver, RegisterPageUI.YEAR_DROPDOWN);
         selectItemInDefaultDropdown(driver, RegisterPageUI.YEAR_DROPDOWN, textItem);
     }

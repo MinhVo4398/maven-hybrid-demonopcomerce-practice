@@ -43,4 +43,19 @@ public class DataHelper {
         return faker.internet().password();
     }
 
+    public String getCompanyName() {
+        return faker.company().name();
+
+    }
+
+    public String getZipCode() {
+        return faker.address().zipCode();
+
+    }
+
+    public String getCountry() {
+        return faker.country().name();
+
+    }
+
 }

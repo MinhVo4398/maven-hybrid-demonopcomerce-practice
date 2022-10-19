@@ -9,6 +9,9 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pageObjects.usernopcommerce.UserAddressPageObject;
+import pageObjects.usernopcommerce.UserMyProductReviewPageObject;
+import pageUIs.CustomerInforPageUI;
 
 import java.util.Date;
 import java.util.List;
@@ -587,5 +590,17 @@ public class BasePage {
         getWebElement(driver, GlobalConstants.UPLOAD_FILE).sendKeys(fullFileName);
     }
 
+    //Common Page
+    public UserAddressPageObject openAddressPage(WebDriver driver) {
+        waitForElementClickable(driver, CustomerInforPageUI.ADDRESS_LINK);
+        clickToElement(driver, CustomerInforPageUI.ADDRESS_LINK);
+        return PageGeneratorManager.getUserAddressPage(driver);
+    }
 
+    public UserMyProductReviewPageObject openMyProductReviewPage(WebDriver driver) {
+        waitForElementClickable(driver, CustomerInforPageUI.MY_PRODUCT_REVIEW_LINK);
+        clickToElement(driver, CustomerInforPageUI.MY_PRODUCT_REVIEW_LINK);
+        return PageGeneratorManager.getUserMyProductReviewPage(driver);
+
+    }
 }
