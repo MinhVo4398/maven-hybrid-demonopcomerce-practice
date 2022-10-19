@@ -80,7 +80,7 @@ public class MyAccountFunction extends BaseTest {
     }
 
     @Test
-    public void TC_01_Customer_Infor() {
+    public void TC_01_Update_Customer_Infor() {
         updatedEmail = "afc" + generateFakeNumber() + "@mail.vn";
         customerInforPage = homePage.openMyAccountPage();
         customerInforPage.checkToFemaleGenderRadio();
