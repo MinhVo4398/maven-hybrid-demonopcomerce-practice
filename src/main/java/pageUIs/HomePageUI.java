@@ -13,6 +13,13 @@ public class HomePageUI {
     public static final String SEARCH_LINK = "xpath=//div[contains(@class,'customer-service')]//a[text()='Search']";
     public static final String NOTEBOOK_LINK = "xpath=//div[@class='listbox']//ul[@class='sublist']//a[text()='Notebooks ']";
     public static final String SORT_DROPDOWN = "xpath=//select[@id='products-orderby']";
+    public static final String LIST_ITEM = "xpath=//div[@class='product-grid']/div[@class='item-grid']/div[@class='item-box']";
+    public static final String PRICE_ITEM = "xpath=//div[@class='item-grid']//span[@class='price actual-price']";
+    public static final String DISPLAY_PER_PAGE_DROPDOWN = "xpath=//select[@id='products-pagesize']";
+    public static final String NEXT_PAGE_ICON = "xpath=//div[@class='pager']//li[@class='next-page']/a";
+    public static final String PREVIOUS_PAGE_ICON = "xpath=//div[@class='pager']//li[@class='previous-page']/a";
+    public static final String PROUCTS = "xpath=//div[@class='item-grid']/div[@class='item-box']";
+    public static final String PAGING = "xpath=//div[@class='pager']";
 
 
 }

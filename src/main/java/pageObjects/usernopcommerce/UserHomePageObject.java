@@ -3,7 +3,12 @@ package pageObjects.usernopcommerce;
 import commons.BasePage;
 import commons.PageGeneratorManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import pageUIs.HomePageUI;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class UserHomePageObject extends BasePage {
     // Biến global;
@@ -93,5 +98,171 @@ public class UserHomePageObject extends BasePage {
     }
 
 
+    public boolean isDataSortedAscending() {
+        // Khai báo 1 Array List
+        ArrayList<String> arrayList = new ArrayList<>();
+
+        // Tìm tắt cả các Element
+        List<WebElement> elementList = getListWebElement(driver, HomePageUI.LIST_ITEM);
+        for (WebElement element : elementList) {
+            arrayList.add(element.getText());
+        }
+        System.out.println("---------Dữ liêu trên UI:------");
+        for (String name : arrayList) {
+            System.out.println(name);
+
+        }
+
+        // Copy qua 1 array list mới để SORT trong Code
+        ArrayList<String> sortedList = new ArrayList<>();
+        for (String chid : arrayList) {
+            sortedList.add(chid);
+        }
+
+        // Thực hiện Sort
+        Collections.sort(sortedList);
+        System.out.println("------Dữ liệu sau khi sort ASC--------");
+        for (String name : sortedList) {
+            System.out.println(name);
+
+        }
+        return sortedList.equals(arrayList);
+
+    }
+
+    public boolean isDataSortedDesending() {
+        // Khai báo 1 Array List
+        ArrayList<String> arrayList = new ArrayList<>();
+
+        // Tìm tắt cả các Element
+        List<WebElement> elementList = getListWebElement(driver, HomePageUI.LIST_ITEM);
+        for (WebElement element : elementList) {
+            arrayList.add(element.getText());
+        }
+        System.out.println("---------Dữ liêu trên UI:------");
+        for (String name : arrayList) {
+            System.out.println(name);
+
+        }
+
+        // Copy qua 1 array list mới để SORT trong Code
+        ArrayList<String> sortedList = new ArrayList<>();
+        for (String chid : arrayList) {
+            sortedList.add(chid);
+        }
+
+        // Thực hiện Sort ASC
+        Collections.sort(sortedList);
+        //Revrerse Data để sort DESC
+        Collections.reverse(sortedList);
+
+        System.out.println("------Dữ liệu sau khi  DESC--------");
+        for (String name : sortedList) {
+            System.out.println(name);
+
+        }
+        return sortedList.equals(arrayList);
+
+    }
+
+
+    public void isPriceSortLowToHigh() {
+        ArrayList<Float> productList = new ArrayList<>();
+
+        // Tim tat cac cac element
+        List<WebElement> elementList = getListWebElement(driver, HomePageUI.PRICE_ITEM);
+        for (WebElement element : elementList) {
+
+            Float fElement = Float.parseFloat(element.getText().replace("$", "").replace(",", "").trim());
+            productList.add(fElement);
+        }
+
+        System.out.println("---------Dữ liệu trên UI ----------");
+        for (Float number : productList) {
+            System.out.println(number);
+        }
+
+        // Copy qua 1 ArrayList khác
+        ArrayList<Float> sortedList = new ArrayList<>();
+        for (Float chid : productList) {
+            sortedList.add(chid);
+        }
+
+
+        Collections.sort(sortedList);
+        System.out.println("---------Dữ liệu đã sort theo ASC ----------");
+        for (Float number : sortedList) {
+            System.out.println(number);
+        }
+
+        // Verify 2 array
+        sortedList.equals(productList);
+
+    }
+
+    public void isPriceSortHighToLow() {
+        ArrayList<Float> productList = new ArrayList<>();
+
+        // Tim tat cac cac element
+        List<WebElement> elementList = getListWebElement(driver, HomePageUI.PRICE_ITEM);
+        for (WebElement element : elementList) {
+
+            Float fElement = Float.parseFloat(element.getText().replace("$", "").replace(",", "").trim());
+            productList.add(fElement);
+        }
+
+        System.out.println("---------Dữ liệu trên UI ----------");
+        for (Float number : productList) {
+            System.out.println(number);
+        }
+
+        // Copy qua 1 ArrayList khác
+        ArrayList<Float> sortedList = new ArrayList<>();
+        for (Float chid : productList) {
+            sortedList.add(chid);
+        }
+
+
+        Collections.sort(sortedList);
+        Collections.reverse(sortedList);
+        System.out.println("---------Dữ liệu đã sort theo DESC ----------");
+        for (Float number : sortedList) {
+            System.out.println(number);
+        }
+
+        // Verify 2 array
+        sortedList.equals(productList);
+
+    }
+
+    public void selectDisplayPerPageDropdown(String textItem) {
+        waitForElementVisible(driver, HomePageUI.DISPLAY_PER_PAGE_DROPDOWN);
+        selectItemInDefaultDropdown(driver, HomePageUI.DISPLAY_PER_PAGE_DROPDOWN, textItem);
+    }
+
+    public void clickToNextPageIcon() {
+        waitForElementClickable(driver, HomePageUI.NEXT_PAGE_ICON);
+        clickToElement(driver, HomePageUI.NEXT_PAGE_ICON);
+
+    }
+
+    public boolean isNextPageIconDisplayed() {
+        waitForElementVisible(driver, HomePageUI.NEXT_PAGE_ICON);
+        return isElementDisplayed(driver, HomePageUI.NEXT_PAGE_ICON);
+    }
+
+    public boolean isPreviousPageIconDisplayed() {
+        waitForElementVisible(driver, HomePageUI.PREVIOUS_PAGE_ICON);
+        return isElementDisplayed(driver, HomePageUI.PREVIOUS_PAGE_ICON);
+    }
+
+    public int isProductDisplay() {
+
+        return getElementSize(driver, HomePageUI.PROUCTS);
+    }
+
+    public boolean isPagingUnDisplayed() {
+        return isElementUndisplayed(driver, HomePageUI.PAGING);
+    }
 }
 

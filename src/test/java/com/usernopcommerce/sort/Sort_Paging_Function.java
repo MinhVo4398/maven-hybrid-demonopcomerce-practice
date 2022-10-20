@@ -4,12 +4,13 @@ import com.usernopcommerce.register.Register_Success_Global;
 import commons.BaseTest;
 import commons.PageGeneratorManager;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.*;
 import pageObjects.usernopcommerce.UserHomePageObject;
 import pageObjects.usernopcommerce.UserLoginPageObject;
 import pageObjects.usernopcommerce.UserSearchPageObject;
 
-public class SortFunction extends BaseTest {
+public class Sort_Paging_Function extends BaseTest {
     WebDriver driver;
     UserHomePageObject homePage;
     UserLoginPageObject loginPage;
@@ -46,7 +47,8 @@ public class SortFunction extends BaseTest {
         homePage.selectSortDropdown("Name: A to Z");
         homePage.sleepInSecond(3);
 
-        // Verify
+        // Verify sort A-Z
+        homePage.isDataSortedAscending();
 
     }
 
@@ -57,7 +59,8 @@ public class SortFunction extends BaseTest {
         homePage.selectSortDropdown("Name: Z to A");
         homePage.sleepInSecond(3);
 
-        // Verify
+        // Verify sort Z-A
+        homePage.isDataSortedDesending();
 
     }
 
@@ -69,19 +72,61 @@ public class SortFunction extends BaseTest {
         homePage.sleepInSecond(3);
 
         // Verify
+        homePage.isPriceSortLowToHigh();
 
     }
 
     @Test
-    public void TC_03_Sort_With_Price_High_To_Low() {
+    public void TC_04_Sort_With_Price_High_To_Low() {
 
         homePage.clickToNotebookLink();
         homePage.selectSortDropdown("Price: High to Low");
         homePage.sleepInSecond(3);
 
-        // Verify
+        // Verify Sort
+        homePage.isPriceSortHighToLow();
+    }
+
+    @Test
+    public void TC_05_Display_With_3_Product_Per_Page() {
+        homePage.clickToNotebookLink();
+        homePage.selectDisplayPerPageDropdown("3");
+        homePage.sleepInSecond(5);
+
+        // Verify 3 product
+        Assert.assertEquals(homePage.isProductDisplay(), 3);
+        ;
+
+        // Verify next icon at Page 1
+        Assert.assertTrue(homePage.isNextPageIconDisplayed());
+        homePage.clickToNextPageIcon();
+        // Verify previous icon at Page 2
+        Assert.assertTrue(homePage.isPreviousPageIconDisplayed());
 
     }
+
+    @Test
+    public void TC_06_Display_With_6_Product_Per_Page() {
+        homePage.clickToNotebookLink();
+        // Verify 6 product
+        Assert.assertEquals(homePage.isProductDisplay(), 6);
+        ;
+
+        // Verify ko xuất hiện paging
+        Assert.assertTrue(homePage.isPagingUnDisplayed());
+    }
+
+    @Test
+    public void TC_07_Display_With_9_Product_Per_Page() {
+        homePage.clickToNotebookLink();
+        homePage.selectDisplayPerPageDropdown("9");
+        // Verify 6 product
+        Assert.assertEquals(homePage.isProductDisplay(), 6);
+
+        // Verify ko xuất hiện paging
+        Assert.assertTrue(homePage.isPagingUnDisplayed());
+    }
+
 
     @AfterClass
     public void AfterClass() {
