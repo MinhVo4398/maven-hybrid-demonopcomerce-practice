@@ -86,7 +86,6 @@ public class Sort_Paging_Function extends BaseTest {
         // Verify Sort
         homePage.isPriceSortHighToLow();
     }
-
     @Test
     public void TC_05_Display_With_3_Product_Per_Page() {
         homePage.clickToNotebookLink();
@@ -115,7 +114,6 @@ public class Sort_Paging_Function extends BaseTest {
         // Verify ko xuất hiện paging
         Assert.assertTrue(homePage.isPagingUnDisplayed());
     }
-
     @Test
     public void TC_07_Display_With_9_Product_Per_Page() {
         homePage.clickToNotebookLink();

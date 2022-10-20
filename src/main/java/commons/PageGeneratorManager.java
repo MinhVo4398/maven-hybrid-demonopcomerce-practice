@@ -39,4 +39,12 @@ public class PageGeneratorManager {
         return new UserSearchPageObject(driver);
     }
 
+    public static UserWhishlistPageObject getUserWishListPage(WebDriver driver) {
+        return new UserWhishlistPageObject(driver);
+    }
+
+    public static UserShoppingCartPageObject getUserShoppingCartPageObject(WebDriver driver) {
+        return new UserShoppingCartPageObject(driver);
+    }
+
 }

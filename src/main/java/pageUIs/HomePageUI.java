@@ -20,6 +20,11 @@ public class HomePageUI {
     public static final String PREVIOUS_PAGE_ICON = "xpath=//div[@class='pager']//li[@class='previous-page']/a";
     public static final String PROUCTS = "xpath=//div[@class='item-grid']/div[@class='item-box']";
     public static final String PAGING = "xpath=//div[@class='pager']";
+    public static final String WISHLIST_BUTTON = "xpath=//button[@title='Add to wishlist']";
+    public static final String WISHLIST_BUTTON_IN_PRODUCT = "xpath=//div[@class='overview-buttons']//button[text()='Add to wishlist']";
+    public static final String NOTIFICATION_MESSAGE = "xpath=//div[@class='bar-notification success']/p";
+    public static final String WHISH_LIST_LINK = "xpath=//a[text()='wishlist']";
+    public static final String MACBOOK_PRODUCT = "xpath=//div[@class='product-grid']//a[text()='Apple MacBook Pro 13-inch']";
 
 
 }

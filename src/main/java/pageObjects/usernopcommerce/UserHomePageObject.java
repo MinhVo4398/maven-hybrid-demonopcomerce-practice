@@ -129,7 +129,6 @@ public class UserHomePageObject extends BasePage {
         return sortedList.equals(arrayList);
 
     }
-
     public boolean isDataSortedDesending() {
         // Khai báo 1 Array List
         ArrayList<String> arrayList = new ArrayList<>();
@@ -250,7 +249,6 @@ public class UserHomePageObject extends BasePage {
         waitForElementVisible(driver, HomePageUI.NEXT_PAGE_ICON);
         return isElementDisplayed(driver, HomePageUI.NEXT_PAGE_ICON);
     }
-
     public boolean isPreviousPageIconDisplayed() {
         waitForElementVisible(driver, HomePageUI.PREVIOUS_PAGE_ICON);
         return isElementDisplayed(driver, HomePageUI.PREVIOUS_PAGE_ICON);
@@ -263,6 +261,32 @@ public class UserHomePageObject extends BasePage {
 
     public boolean isPagingUnDisplayed() {
         return isElementUndisplayed(driver, HomePageUI.PAGING);
+    }
+
+    public void clickAddToWishListButton() {
+        waitForElementClickable(driver, HomePageUI.WISHLIST_BUTTON);
+        clickToElement(driver, HomePageUI.WISHLIST_BUTTON);
+    }
+
+    public void clickAddToWishListButtonInProduct() {
+        waitForElementClickable(driver, HomePageUI.WISHLIST_BUTTON_IN_PRODUCT);
+        clickToElement(driver, HomePageUI.WISHLIST_BUTTON_IN_PRODUCT);
+    }
+
+    public String isNotificationMessageDisplayed() {
+        waitForElementVisible(driver, HomePageUI.NOTIFICATION_MESSAGE);
+        return getElementText(driver, HomePageUI.NOTIFICATION_MESSAGE);
+    }
+
+    public UserWhishlistPageObject clickToWhishListLink() {
+        waitForElementClickable(driver, HomePageUI.WHISH_LIST_LINK);
+        clickToElement(driver, HomePageUI.WHISH_LIST_LINK);
+        return PageGeneratorManager.getUserWishListPage(driver);
+    }
+
+    public void clickToMacbookProductLink() {
+        waitForElementClickable(driver, HomePageUI.MACBOOK_PRODUCT);
+        clickToElement(driver, HomePageUI.MACBOOK_PRODUCT);
     }
 }
 
