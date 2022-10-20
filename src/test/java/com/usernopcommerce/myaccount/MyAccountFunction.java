@@ -136,7 +136,7 @@ public class MyAccountFunction extends BaseTest {
 
     public void TC_03_My_Product_Review() {
         //Address hover vào computer -> click desktop => homePage
-        homePage = addressPage.clickToComputerProductLink();
+        homePage = addressPage.clickToComputerProductLinkAndDeskTopLink();
 
 
         // Click To Product : your old computer

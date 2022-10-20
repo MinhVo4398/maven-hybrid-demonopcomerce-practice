@@ -154,7 +154,7 @@ public class UserAddressPageObject extends BasePage {
 
     }
 
-    public UserHomePageObject clickToComputerProductLink() {
+    public UserHomePageObject clickToComputerProductLinkAndDeskTopLink() {
         // hover
         waitForElementClickable(driver, AddressPageUI.COMPUTER_LINK);
         hoverMouseToElement(driver, AddressPageUI.COMPUTER_LINK);
@@ -164,4 +164,5 @@ public class UserAddressPageObject extends BasePage {
         return PageGeneratorManager.getUserHomePage(driver);
 
     }
+
 }

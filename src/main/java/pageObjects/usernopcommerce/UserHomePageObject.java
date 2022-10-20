@@ -76,5 +76,22 @@ public class UserHomePageObject extends BasePage {
         clickToElement(driver, HomePageUI.SEARCH_LINK);
         return PageGeneratorManager.getUserSearchPage(driver);
     }
+
+    public void clickToNotebookLink() {
+        // Hover Computer link
+        waitForElementClickable(driver, HomePageUI.COMPUTERS_LINK);
+        clickToElement(driver, HomePageUI.COMPUTERS_LINK);
+
+        // click Notebook link
+        waitForElementClickable(driver, HomePageUI.NOTEBOOK_LINK);
+        clickToElement(driver, HomePageUI.NOTEBOOK_LINK);
+    }
+
+    public void selectSortDropdown(String textItem) {
+        waitForElementVisible(driver, HomePageUI.SORT_DROPDOWN);
+        selectItemInDefaultDropdown(driver, HomePageUI.SORT_DROPDOWN, textItem);
+    }
+
+
 }
 
