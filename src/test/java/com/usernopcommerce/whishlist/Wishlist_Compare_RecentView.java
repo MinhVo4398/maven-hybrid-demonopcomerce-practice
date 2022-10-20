@@ -15,6 +15,7 @@ public class Wishlist_Compare_RecentView extends BaseTest {
     UserSearchPageObject searchPage;
     UserWhishlistPageObject wishListPage;
     UserShoppingCartPageObject shoppingCartPage;
+    UserCompareProductPageObject compareProductListPage;
     public String emailAddress, password;
 
     @Parameters({"envName", "serverName", "browser", "ipAddress", "portNumber", "osName", "osVersion"})
@@ -66,8 +67,51 @@ public class Wishlist_Compare_RecentView extends BaseTest {
 
     }
 
+    @Test
+    public void TC_03_Remove_Product_In_Wishist_Page() {
+        homePage = shoppingCartPage.openHomePage(driver);
+        homePage.clickToNotebookLink();
+        homePage.clickToMacbookProductLink();
+        // Click Add To wishlist
+        homePage.clickAddToWishListButtonInProduct();
+
+        // Verify message
+        Assert.assertEquals(homePage.isNotificationMessageDisplayed(), "The product has been added to your wishlist");
+
+        wishListPage = homePage.clickToWhishListLink();
+        wishListPage.checkToRemoveButton();
+
+        Assert.assertEquals(wishListPage.getMessageAtWishlisgPage(), "The wishlist is empty!");
+
+    }
+
+    @Test
+    public void TC_04_Add_Product_To_Compare() {
+        homePage = wishListPage.openHomePage(driver);
+        homePage.clickToComputerProduct();
+        homePage.clickAddToCompareListButton();
+        Assert.assertEquals(homePage.getNotificationMessageSuccess(), "The product has been added to your product comparison");
+        sleepInSecond(10); // sleep để message disappear
+        homePage.scrollOnTopPage();
+        homePage.clickToDesktopLink();
+        homePage.clickToDigitalProduct();
+        homePage.clickAddToCompareListButton();
+        Assert.assertEquals(homePage.getNotificationMessageSuccess(), "The product has been added to your product comparison");
+        compareProductListPage = homePage.openCompareProductListPage();
+
+        Assert.assertTrue(compareProductListPage.isDigitalStormProductDisplayed());
+        Assert.assertEquals(compareProductListPage.isDigitalStormProductPriceDisplayed(), "$1,259.00");
+
+        Assert.assertTrue(compareProductListPage.isBuildYourProductDisplayed());
+        Assert.assertEquals(compareProductListPage.isBuildYourProductPriceDisplayed(), "$1,200.00");
+
+        compareProductListPage.clickToClearListButton();
+        Assert.assertEquals(compareProductListPage.getNoItemsCompareProductMessgae(), "You have no items to compare.");
+
+    }
+
     @AfterClass
     public void AfterClass() {
-        // closeBrowserAndDriver("local");
+        //closeBrowserAndDriver("local");
     }
 }

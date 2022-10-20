@@ -9,12 +9,10 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pageObjects.usernopcommerce.UserAddressPageObject;
-import pageObjects.usernopcommerce.UserCustomerInforPageObject;
-import pageObjects.usernopcommerce.UserMyProductReviewPageObject;
-import pageObjects.usernopcommerce.UserRewardPointPageObject;
+import pageObjects.usernopcommerce.*;
 import pageUIs.BasePageNopCommerceUI;
 import pageUIs.CustomerInforPageUI;
+import pageUIs.ShoppingCartPageUI;
 
 import java.util.Date;
 import java.util.List;
@@ -446,6 +444,11 @@ public class BasePage extends BasePageNopCommerceUI {
         jsExecutor.executeScript("arguments[0].click();", getWebElement(driver, locatorType));
     }
 
+    public void scrollToElementOnTop(WebDriver driver, String locatorType) {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", getWebElement(driver, locatorType));
+    }
+
     public void scrollToElement(WebDriver driver, String locatorType) {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript("arguments[0].scrollIntoView(true);", getWebElement(driver, locatorType));
@@ -621,5 +624,11 @@ public class BasePage extends BasePageNopCommerceUI {
 
     }
 
+    public UserHomePageObject openHomePage(WebDriver driver) {
+        waitForElementClickable(driver, BasePageNopCommerceUI.HOME_PAGE_LINK);
+        clickToElement(driver, BasePageNopCommerceUI.HOME_PAGE_LINK);
+        return PageGeneratorManager.getUserHomePage(driver);
+
+    }
 
 }

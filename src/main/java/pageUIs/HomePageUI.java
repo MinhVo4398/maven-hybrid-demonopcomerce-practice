@@ -25,6 +25,12 @@ public class HomePageUI {
     public static final String NOTIFICATION_MESSAGE = "xpath=//div[@class='bar-notification success']/p";
     public static final String WHISH_LIST_LINK = "xpath=//a[text()='wishlist']";
     public static final String MACBOOK_PRODUCT = "xpath=//div[@class='product-grid']//a[text()='Apple MacBook Pro 13-inch']";
+    public static final String ADD_TO_COMPARE_LIST_BUTTON = "xpath=//div[@class='compare-products']/button";
+    public static final String NOTIFICATION_MESSAGE_SUCCESS = "xpath=//div[@class='bar-notification success']/p[@class='content']";
+    public static final String DESKTOP_LINK = "xpath=//div[@class='breadcrumb']//a[@href='/desktops']";
+    public static final String COMPARE_PRODUCT_LIST_LINK = "xpath=//div[@class='footer-upper']//ul[@class='list']//a[text()='Compare products list']";
+    public static final String DIGITAL_STORM_PRODUCT = "xpath=//div[@class='item-grid']//h2[@class='product-title']/a[contains(text(),'Digital Storm')]";
+    public static final String SCROLL_PRODUCT_NAME = "xpath=//div[@class='product-name']";
 
 
 }

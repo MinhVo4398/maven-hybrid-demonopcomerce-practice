@@ -27,6 +27,16 @@ public class UserWhishlistPageObject extends BasePage {
     public UserShoppingCartPageObject clickAddToCartButton() {
         waitForElementClickable(driver, WhishlistPageUI.ADD_TO_CART_BUTTON);
         clickToElement(driver, WhishlistPageUI.ADD_TO_CART_BUTTON);
-        return PageGeneratorManager.getUserShoppingCartPageObject(driver);
+        return PageGeneratorManager.getUserShoppingCart(driver);
+    }
+
+    public void checkToRemoveButton() {
+        waitForElementVisible(driver, WhishlistPageUI.REMOVE_BUTTON);
+        checkToDefaultCheckboxRadio(driver, WhishlistPageUI.REMOVE_BUTTON);
+    }
+
+    public String getMessageAtWishlisgPage() {
+        waitForElementVisible(driver, WhishlistPageUI.EMPTY_MESSAGE);
+        return getElementText(driver, WhishlistPageUI.EMPTY_MESSAGE);
     }
 }

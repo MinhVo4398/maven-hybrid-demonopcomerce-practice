@@ -288,5 +288,35 @@ public class UserHomePageObject extends BasePage {
         waitForElementClickable(driver, HomePageUI.MACBOOK_PRODUCT);
         clickToElement(driver, HomePageUI.MACBOOK_PRODUCT);
     }
+
+    public void clickAddToCompareListButton() {
+        waitForElementClickable(driver, HomePageUI.ADD_TO_COMPARE_LIST_BUTTON);
+        clickToElement(driver, HomePageUI.ADD_TO_COMPARE_LIST_BUTTON);
+    }
+
+    public String getNotificationMessageSuccess() {
+        waitForElementVisible(driver, HomePageUI.NOTIFICATION_MESSAGE_SUCCESS);
+        return getElementText(driver, HomePageUI.NOTIFICATION_MESSAGE_SUCCESS);
+    }
+
+    public void clickToDesktopLink() {
+        waitForElementClickable(driver, HomePageUI.DESKTOP_LINK);
+        clickToElement(driver, HomePageUI.DESKTOP_LINK);
+    }
+
+    public void clickToDigitalProduct() {
+        waitForElementClickable(driver, HomePageUI.DIGITAL_STORM_PRODUCT);
+        clickToElement(driver, HomePageUI.DIGITAL_STORM_PRODUCT);
+    }
+
+    public UserCompareProductPageObject openCompareProductListPage() {
+        waitForElementClickable(driver, HomePageUI.COMPARE_PRODUCT_LIST_LINK);
+        clickToElement(driver, HomePageUI.COMPARE_PRODUCT_LIST_LINK);
+        return PageGeneratorManager.getUserComapreProductlistPage(driver);
+    }
+
+    public void scrollOnTopPage() {
+        scrollToElementOnTop(driver, HomePageUI.SCROLL_PRODUCT_NAME);
+    }
 }
 

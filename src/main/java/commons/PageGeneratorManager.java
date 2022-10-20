@@ -1,7 +1,6 @@
 package commons;
 
 import org.openqa.selenium.WebDriver;
-import pageObjects.adminnopcommerce.AdminLoginPageObject;
 import pageObjects.usernopcommerce.*;
 
 
@@ -43,8 +42,13 @@ public class PageGeneratorManager {
         return new UserWhishlistPageObject(driver);
     }
 
-    public static UserShoppingCartPageObject getUserShoppingCartPageObject(WebDriver driver) {
+    public static UserShoppingCartPageObject getUserShoppingCart(WebDriver driver) {
         return new UserShoppingCartPageObject(driver);
     }
+
+    public static UserCompareProductPageObject getUserComapreProductlistPage(WebDriver driver) {
+        return new UserCompareProductPageObject(driver);
+    }
+
 
 }
