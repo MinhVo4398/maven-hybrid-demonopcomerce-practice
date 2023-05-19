@@ -12,7 +12,6 @@ public class UserAddressPageObject extends BasePage {
     WebDriverWait explicitWait;
     boolean isPageReady;
 
-
     public UserAddressPageObject(WebDriver driver) {
         this.driver = driver;
 
@@ -24,12 +23,10 @@ public class UserAddressPageObject extends BasePage {
 
     }
 
-
     public UserAddressPageObject(WebDriver driver, WebDriverWait explicitWait) {
         this.driver = driver;
         this.explicitWait = explicitWait;
     }
-
 
     public void clickToAddNewButton() {
         waitForElementClickable(driver, AddressPageUI.ADD_NEW_BUTTON);

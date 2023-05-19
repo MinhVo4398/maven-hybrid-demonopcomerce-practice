@@ -17,7 +17,6 @@ public class UserSearchPageObject extends BasePage {
     public void clickToSearchButton() {
         waitForElementClickable(driver, SearchPageUI.SEARCH_BUTTON);
         clickToElement(driver, SearchPageUI.SEARCH_BUTTON);
-
     }
 
     public String isErrorMessageDisplayed() {

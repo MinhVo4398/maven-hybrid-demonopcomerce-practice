@@ -56,7 +56,6 @@ public class Register_Validation extends BaseTest {
         Assert.assertEquals(registerPage.getErrorMessageAtPasswordTextbox(), "Password is required.");
         Assert.assertEquals(registerPage.getErrorMessageAtConfirmPasswordTextbox(), "Password is required.");
 
-
     }
 
     @Test

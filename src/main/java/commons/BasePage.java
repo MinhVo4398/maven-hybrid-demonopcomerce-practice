@@ -78,8 +78,8 @@ public class BasePage extends BasePageNopCommerceUI {
 
     // Alert
     public Alert waitForAlertPresent(WebDriver driver) {
-        WebDriverWait explicaitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
-        return explicaitWait.until(ExpectedConditions.alertIsPresent());
+        WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
+        return explicitWait.until(ExpectedConditions.alertIsPresent());
     }
 
 
@@ -168,7 +168,6 @@ public class BasePage extends BasePageNopCommerceUI {
 
             locatorType = String.format(locatorType, (Object) dynamicValues);
 
-
         }
         return locatorType;
     }
@@ -196,7 +195,6 @@ public class BasePage extends BasePageNopCommerceUI {
         WebElement element = getWebElement(driver, locatorType);
         element.clear();
         element.sendKeys(textValue);
-
     }
 
     public void sendKeyToElement(WebDriver driver, String locatorType, String textValue, String... dynamicValue) {
@@ -208,7 +206,6 @@ public class BasePage extends BasePageNopCommerceUI {
     // Ham kho - clear value by Delete Key
     public void clearValueInElementByDeleteKey(WebDriver driver, String locatorType) {
         WebElement element = getWebElement(driver, locatorType);
-
         element.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
     }
 
@@ -295,7 +292,7 @@ public class BasePage extends BasePageNopCommerceUI {
 
     }
 
-    //
+    //Radio
     public void checkToDefaultCheckboxRadio(WebDriver driver, String locatorType) {
         WebElement element = getWebElement(driver, locatorType);
         if (!element.isSelected()) {
@@ -454,7 +451,6 @@ public class BasePage extends BasePageNopCommerceUI {
         jsExecutor.executeScript("arguments[0].scrollIntoView(true);", getWebElement(driver, locatorType));
     }
 
-    // Ham moi
     // Ham moi
     public String getElementValueByJSXpath(WebDriver driver, String xpathLocator) {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;

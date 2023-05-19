@@ -19,8 +19,6 @@ public class UserRegisterPageObject extends BasePage {
     public void clickToRegisterButton() {
         waitForElementClickable(driver, RegisterPageUI.REGISTER_BUTTON);
         clickToElement(driver, RegisterPageUI.REGISTER_BUTTON);
-
-
     }
 
     public String getErrorMessageAtFirstnameTextbox() {

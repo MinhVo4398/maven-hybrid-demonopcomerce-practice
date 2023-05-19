@@ -13,7 +13,7 @@
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.usernopcommerce.register.Register_Success_Global"/>
-            <class name="com.usernopcommerce.whishlist.Wishlist_Compare_RecentView"/>
+      <class name="com.usernopcommerce.sort.Sort_Paging_Function"/>
         </classes>
     </test>
 

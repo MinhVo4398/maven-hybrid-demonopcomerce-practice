@@ -36,18 +36,16 @@ public class Register_Success_Global extends BaseTest {
         EMAIL_ADDRESS = "afc" + generateFakeNumber() + "@mail.vn";
         PASSWORD = "123456";
 
-
         registerPage.inputToFirstNameTextbox(firstName);
         registerPage.inputToLastNameTextbox(lastName);
         registerPage.inputToEmailTextbox(EMAIL_ADDRESS);
-
 
         registerPage.inputToPasswordTextbox(PASSWORD);
 
         registerPage.inputToConfirmPasswordTextbox(PASSWORD);
 
         registerPage.clickToRegisterButton();
-        homePage = registerPage.clickToLogoutLink();
+        //homePage = registerPage.clickToLogoutLink();
         driver.quit();
     }
 
