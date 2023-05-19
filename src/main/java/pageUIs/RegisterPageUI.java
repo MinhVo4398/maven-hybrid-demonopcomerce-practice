@@ -21,7 +21,7 @@ public class RegisterPageUI {
     public final static String DATE_DROPDOWN = "xpath=//select[@name='DateOfBirthDay']";
     public final static String MONTH_DROPDOWN = "xpath=//select[@name='DateOfBirthMonth']";
     public final static String YEAR_DROPDOWN = "xpath=//select[@name='DateOfBirthYear']";
-
+    public final static String CONTINUE_BUTTON = "xpath=//a[text()='Continue']";
 
 }
 

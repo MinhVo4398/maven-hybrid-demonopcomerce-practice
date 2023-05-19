@@ -20,7 +20,6 @@ public class ChromeDriverManager implements BrowserFactory {
         options.addArguments("--disable-notifications");
         options.addArguments("--disable-geolocation");
         options.setExperimentalOption("useAutomationExtension", false);
-        options.addArguments("--headless");
         options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
 
         HashMap<String, Object> chromePrefs = new HashMap<String, Object>();

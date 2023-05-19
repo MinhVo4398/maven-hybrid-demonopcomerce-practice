@@ -46,6 +46,7 @@ public class Register_Success_Global extends BaseTest {
 
         registerPage.clickToRegisterButton();
         //homePage = registerPage.clickToLogoutLink();
+     homePage =  registerPage.clickContinueButton();
         driver.quit();
     }
 

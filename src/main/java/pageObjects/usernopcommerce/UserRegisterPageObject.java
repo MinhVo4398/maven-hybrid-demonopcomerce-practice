@@ -116,4 +116,10 @@ public class UserRegisterPageObject extends BasePage {
         waitForElementVisible(driver, RegisterPageUI.YEAR_DROPDOWN);
         selectItemInDefaultDropdown(driver, RegisterPageUI.YEAR_DROPDOWN, textItem);
     }
+
+    public UserHomePageObject clickContinueButton() {
+        waitForElementClickable(driver,RegisterPageUI.CONTINUE_BUTTON);
+        clickToElement(driver,RegisterPageUI.CONTINUE_BUTTON);
+        return PageGeneratorManager.getUserHomePage(driver);
+    }
 }

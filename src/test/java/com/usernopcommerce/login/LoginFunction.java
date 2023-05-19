@@ -47,7 +47,8 @@ public class LoginFunction extends BaseTest {
         registerPage.inputToConfirmPasswordTextbox(validPassword);
         registerPage.clickToRegisterButton();
 
-        homePage = registerPage.clickToLogoutLink();
+       // homePage = registerPage.clickToLogoutLink();
+        homePage = registerPage.clickContinueButton();
     }
 
     @Test
