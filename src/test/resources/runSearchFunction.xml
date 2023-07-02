@@ -2,9 +2,8 @@
 <suite parallel="false" thread-count="2" name="Run Search Feature">
 
     <listeners>
-        <!--        <listener class-name="reportConfig.ExtentTestListener"/>-->
-        <listener class-name="reportConfig.AllureTestListener"/>
-        <listener class-name="reportConfig.MethodListener"/>
+        <listener class-name="reportConfig.allureConfig.AllureTestListener"/>
+        <listener class-name="reportConfig.allureConfig.MethodListener"/>
     </listeners>
 
     <!-- Global-->

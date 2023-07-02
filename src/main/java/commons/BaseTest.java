@@ -1,15 +1,11 @@
 package commons;
 
 import factoryEnvironment.*;
-import org.apache.commons.io.FileUtils;
 import org.joda.time.DateTime;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
-import org.testng.annotations.BeforeSuite;
-import reportConfig.VerificationFailures;
+import reportConfig.allureConfig.VerificationFailures;
 
 import java.io.File;
 import java.io.IOException;

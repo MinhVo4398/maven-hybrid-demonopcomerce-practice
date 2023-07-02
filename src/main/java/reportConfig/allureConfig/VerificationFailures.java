@@ -1,4 +1,4 @@
-package reportConfig;
+package reportConfig.allureConfig;
 
 
 import org.testng.ITestResult;

@@ -1,18 +1,13 @@
 package com.usernopcommerce.login;
 
-import com.aventstack.extentreports.Status;
 import commons.BaseTest;
 import commons.PageGeneratorManager;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.*;
 import pageObjects.usernopcommerce.UserHomePageObject;
 import pageObjects.usernopcommerce.UserLoginPageObject;
 import pageObjects.usernopcommerce.UserRegisterPageObject;
-import reportConfig.ExtentTestManager;
 import utilities.DataHelper;
-
-import java.lang.reflect.Method;
 
 public class LoginFunction extends BaseTest {
     WebDriver driver;

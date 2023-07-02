@@ -1,4 +1,4 @@
-package reportConfig;
+package reportConfig.allureConfig;
 
 import commons.BaseTest;
 import io.qameta.allure.Attachment;
