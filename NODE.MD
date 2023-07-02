@@ -2,3 +2,4 @@
    mvn clean test
 2) Report:
    alure serve alure-json
+![img.png](img.png)

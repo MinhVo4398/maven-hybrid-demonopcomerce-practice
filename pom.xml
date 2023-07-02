@@ -181,7 +181,8 @@
                     </argLine>
                     <!-- Run TestNG xml file -->
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/runLoginFunction.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/runSuiteFile.xml</suiteXmlFile>
+
                         <!-- <suiteXmlFile>environmentRunner/${environment}.xml</suiteXmlFile>-->
                     </suiteXmlFiles>
 

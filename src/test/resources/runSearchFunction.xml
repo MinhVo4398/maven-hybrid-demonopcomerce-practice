@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite parallel="false" thread-count="2" name="Run Login Feature">
+<suite parallel="false" thread-count="2" name="Run Search Feature">
 
     <listeners>
         <!--        <listener class-name="reportConfig.ExtentTestListener"/>-->
@@ -15,7 +15,7 @@
         <parameter name="browser" value="h_chrome"/>
         <classes>
             <class name="com.usernopcommerce.register.Register_Success_Global"/>
-            <class name="com.usernopcommerce.login.LoginFunction"/>
+            <class name="com.usernopcommerce.search.SearchFunction"/>
         </classes>
     </test>
 

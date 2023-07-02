@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" thread-count="2" name="Suite File">
+
+    <suite-files>
+        <suite-file path="runLoginFunction.xml"/>
+        <suite-file path="runSearchFunction.xml"/>
+    </suite-files>
+
+
+</suite>

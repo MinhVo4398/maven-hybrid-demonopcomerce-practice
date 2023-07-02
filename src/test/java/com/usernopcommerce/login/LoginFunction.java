@@ -61,8 +61,8 @@ public class LoginFunction extends BaseTest {
         loginPage.clickToLoginButton();
 
         System.out.println("LoginPage: Step 03 Verify Please enter your email");
-        Assert.assertEquals(loginPage.getErrorMessageAtEmailTextBox(), "Please enter your email!");
-        //verifyEquals(loginPage.getErrorMessageAtEmailTextBox(), "Please enter your emai!ll");
+        //  Assert.assertEquals(loginPage.getErrorMessageAtEmailTextBox(), "Please enter your email!");
+        verifyEquals(loginPage.getErrorMessageAtEmailTextBox(), "Please enter your emai!ll");
 
     }
 
@@ -79,7 +79,7 @@ public class LoginFunction extends BaseTest {
         loginPage.clickToLoginButton();
 
         System.out.println("Login Page: Step 04 Verify wronng email");
-        Assert.assertEquals(loginPage.getErrorMessageAtEmailTextBox(), "Wrong email!");
+        verifyEquals(loginPage.getErrorMessageAtEmailTextBox(), "Wrong email!");
     }
 
     @Test
@@ -95,7 +95,7 @@ public class LoginFunction extends BaseTest {
         loginPage.clickToLoginButton();
 
         System.out.println("Login Page Step 04:  Verify");
-        Assert.assertEquals(loginPage.getErrorMessageUnsuccessfull(), "Login was unsuccessful. Please correct the errors and try again.\nNo customer account found");
+        verifyEquals(loginPage.getErrorMessageUnsuccessfull(), "Login was unsuccessful. Please correct the errors and try again.\nNo customer account found");
     }
 
     @Test
@@ -111,7 +111,7 @@ public class LoginFunction extends BaseTest {
         loginPage.clickToLoginButton();
 
         System.out.println("Login Page Step 04:  Verify");
-        Assert.assertEquals(loginPage.getErrorMessageUnsuccessfull(), "Login was unsuccessful. Please correct the errors and try again.\nThe credentials provided are incorrect");
+        verifyEquals(loginPage.getErrorMessageUnsuccessfull(), "Login was unsuccessful. Please correct the errors and try again.\nThe credentials provided are incorrect");
 
     }
 
@@ -128,7 +128,7 @@ public class LoginFunction extends BaseTest {
         loginPage.clickToLoginButton();
 
         System.out.println("Login Page Step 04:  Verify");
-        Assert.assertEquals(loginPage.getErrorMessageUnsuccessfull(), "Login was unsuccessful. Please correct the errors and try again.\nThe credentials provided are incorrect");
+        verifyEquals(loginPage.getErrorMessageUnsuccessfull(), "Login was unsuccessful. Please correct the errors and try again.\nThe credentials provided are incorrect");
 
     }
 
@@ -143,7 +143,7 @@ public class LoginFunction extends BaseTest {
         homePage = loginPage.clickToLoginButton();
 
         System.out.println("HomePahe - Step 04: Verify My account link  hiển thị");
-        Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
+        verifyTrue(homePage.isMyAccountLinkDisplayed());
     }
 
     @AfterClass
