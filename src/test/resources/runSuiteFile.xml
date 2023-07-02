@@ -3,7 +3,9 @@
 
     <suite-files>
         <suite-file path="runLoginFunction.xml"/>
+        <suite-file path="runMyAccountFunction.xml"/>
         <suite-file path="runSearchFunction.xml"/>
+        <suite-file path="runSortFunction.xml"/>
     </suite-files>
 
 

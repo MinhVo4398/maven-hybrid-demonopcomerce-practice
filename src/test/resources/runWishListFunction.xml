@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" thread-count="2" name="Run WishList Feature">
+
+    <listeners>
+        <listener class-name="reportConfig.allureConfig.AllureTestListener"/>
+        <listener class-name="reportConfig.allureConfig.MethodListener"/>
+    </listeners>
+
+    <!-- Global-->
+    <parameter name="envName" value="local"/>
+    <parameter name="serverName" value="dev"/>
+
+    <test name="Run on CHROME">
+        <parameter name="browser" value="h_chrome"/>
+        <classes>
+            <class name="com.usernopcommerce.register.Register_Success_Global"/>
+            <class name="com.usernopcommerce.whishlist.Wishlist_Compare_RecentView"/>
+        </classes>
+    </test>
+
+
+</suite>

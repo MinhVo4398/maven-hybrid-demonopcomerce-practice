@@ -36,7 +36,7 @@ public class AllureTestListener implements ITestListener {
     public void onTestFailure(ITestResult iTestResult) {
         Object testClass = iTestResult.getInstance();
         WebDriver driver = ((BaseTest) testClass).getDriverInstance();
-        System.out.println("Driver at Onfail: " + driver.toString());
+        System.out.println("Driver at On fail: " + driver.toString());
         saveScreenshotPNG(iTestResult.getName(), driver);
         saveTextLog(getTestMethodName(iTestResult) + " failed and screenshot taken!");
     }
