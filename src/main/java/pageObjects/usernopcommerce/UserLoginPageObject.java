@@ -3,6 +3,7 @@ package pageObjects.usernopcommerce;
 import commons.BasePage;
 import commons.PageGeneratorManager;
 
+import io.qameta.allure.Step;
 import pageUIs.LoginPageUI;
 
 
@@ -15,7 +16,7 @@ public class UserLoginPageObject extends BasePage {
         this.driver = driver;
     }
 
-
+    @Step("Click login button")
     public UserHomePageObject clickToLoginButton() {
         waitForElementClickable(driver, LoginPageUI.LOGIN_BUTTON);
         clickToElement(driver, LoginPageUI.LOGIN_BUTTON);

@@ -28,6 +28,7 @@ public class LoginFunction extends BaseTest {
     public void beforeClass(@Optional("local") String envName, @Optional("dev") String serverName, @Optional("chrome") String browserName, @Optional("localhost") String ipAddress, @Optional("4444") String portNumber, @Optional("Windows") String osName, @Optional("10") String osVersion) {
 
         driver = getBrowserDriver(envName, serverName, browserName, ipAddress, portNumber, osName, osVersion);
+        System.out.println("Driver at Login: " + driver.toString());
         dataHelper = DataHelper.getDataHelper();
         firstName = dataHelper.getFirstName();
         lastName = dataHelper.getLastName();
@@ -47,7 +48,7 @@ public class LoginFunction extends BaseTest {
         registerPage.inputToConfirmPasswordTextbox(validPassword);
         registerPage.clickToRegisterButton();
 
-       // homePage = registerPage.clickToLogoutLink();
+        // homePage = registerPage.clickToLogoutLink();
         homePage = registerPage.clickContinueButton();
     }
 
@@ -60,7 +61,8 @@ public class LoginFunction extends BaseTest {
         loginPage.clickToLoginButton();
 
         System.out.println("LoginPage: Step 03 Verify Please enter your email");
-        Assert.assertEquals(loginPage.getErrorMessageAtEmailTextBox(), "Please enter your email");
+        Assert.assertEquals(loginPage.getErrorMessageAtEmailTextBox(), "Please enter your email!");
+        //verifyEquals(loginPage.getErrorMessageAtEmailTextBox(), "Please enter your emai!ll");
 
     }
 
@@ -70,18 +72,14 @@ public class LoginFunction extends BaseTest {
         // Initialize Login Page
         loginPage = homePage.openLoginPage();
 
-
         System.out.println("Login Page: Step 02 Input Invalid Email and Corect Password");
         loginPage.inputToEmailTextbox(invalidEmail);
-
 
         System.out.println("Login Page Step 03: Click Login button");
         loginPage.clickToLoginButton();
 
         System.out.println("Login Page: Step 04 Verify wronng email");
-        Assert.assertEquals(loginPage.getErrorMessageAtEmailTextBox(), "Wrong email");
-
-
+        Assert.assertEquals(loginPage.getErrorMessageAtEmailTextBox(), "Wrong email!");
     }
 
     @Test
@@ -90,18 +88,14 @@ public class LoginFunction extends BaseTest {
         // Initialize Login Page
         loginPage = homePage.openLoginPage();
 
-
         System.out.println("Login Page: Step 02 Input Invalid Email ");
         loginPage.inputToEmailTextbox(notFoundEmail);
-
 
         System.out.println("Login Page Step 03: Click Login button");
         loginPage.clickToLoginButton();
 
         System.out.println("Login Page Step 04:  Verify");
         Assert.assertEquals(loginPage.getErrorMessageUnsuccessfull(), "Login was unsuccessful. Please correct the errors and try again.\nNo customer account found");
-
-
     }
 
     @Test
@@ -109,7 +103,6 @@ public class LoginFunction extends BaseTest {
         System.out.println("HomePage : Step 01 Click login Page");
         // Initialize Login Page
         loginPage = homePage.openLoginPage();
-
         System.out.println("Login Page: Step 02 Input Existing Email and No input Password");
         loginPage.inputToEmailTextbox(emailAddress);
         loginPage.inputToPasswordTextbox("");
@@ -119,7 +112,6 @@ public class LoginFunction extends BaseTest {
 
         System.out.println("Login Page Step 04:  Verify");
         Assert.assertEquals(loginPage.getErrorMessageUnsuccessfull(), "Login was unsuccessful. Please correct the errors and try again.\nThe credentials provided are incorrect");
-
 
     }
 
@@ -131,7 +123,6 @@ public class LoginFunction extends BaseTest {
         System.out.println("Login Page: Step 02 Input Existing Email and No input Password");
         loginPage.inputToEmailTextbox(emailAddress);
         loginPage.inputToPasswordTextbox(invalidPassword);
-
 
         System.out.println("Login Page Step 03: Click Login button");
         loginPage.clickToLoginButton();
@@ -145,25 +136,19 @@ public class LoginFunction extends BaseTest {
     public void TC_06_Login_Valid_Email_Password() {
         System.out.println("HomePage : Step 01 Click login Page");
         loginPage = homePage.openLoginPage();
-
         System.out.println("Login Page: Step 02 Input Existing Email and No input Password");
         loginPage.inputToEmailTextbox(emailAddress);
         loginPage.inputToPasswordTextbox(validPassword);
-
-
         System.out.println("Login Page Step 03: Click Login button");
         homePage = loginPage.clickToLoginButton();
 
         System.out.println("HomePahe - Step 04: Verify My account link  hiển thị");
         Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
-
-
     }
 
     @AfterClass
     public void afterClass() {
         driver.quit();
-
     }
 
 

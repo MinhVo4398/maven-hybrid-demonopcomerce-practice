@@ -17,8 +17,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- Compiler Code with Java 11 -->
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
 
         <!-- Global variable for dependencies -->
         <webdriver.version>3.141.59</webdriver.version>
@@ -29,6 +29,7 @@
         <faker.version>1.0.1</faker.version>
         <log4j.version>1.2.16</log4j.version>
         <reportng.version>1.1.4</reportng.version>
+        <aspectj.version>1.9.8</aspectj.version>
 
         <!--    Default value-->
         <environment>dev</environment>
@@ -145,40 +146,59 @@
             <version>1.0.12</version>
         </dependency>
 
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>2.22.2</version>
+        </dependency>
+
 
     </dependencies>
 
-    <!-- Compiler/ Run Test -->
     <build>
         <plugins>
-            <!-- Compiler -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.0</version>
-                <!-- Compiler code vs Java 11 -->
+                <version>3.8.1</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>11</source>
+                    <target>11</target>
+                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
 
-            <!-- Run test -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
+                <version>2.20</version>
+
                 <configuration>
+                    <testFailureIgnore>false</testFailureIgnore>
+
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
                     <!-- Run TestNG xml file -->
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/runLoginFunction.xml</suiteXmlFile>
                         <!-- <suiteXmlFile>environmentRunner/${environment}.xml</suiteXmlFile>-->
                     </suiteXmlFiles>
 
-
+                    <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>io.qameta.allure.junit4.AllureJunit4</value>
+                        </property>
+                    </properties>
                 </configuration>
-
-
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>

@@ -252,18 +252,14 @@ public class BasePage extends BasePageNopCommerceUI {
                 break;
             }
         }
-
-
     }
 
     public String getElementAttribute(WebDriver driver, String locatorType, String attributeName) {
         return getWebElement(driver, locatorType).getAttribute(attributeName);
-
     }
 
     public String getElementAttribute(WebDriver driver, String locatorType, String attributeName, String... dynamicValues) {
         return getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).getAttribute(attributeName);
-
     }
 
     public String getElementText(WebDriver driver, String locatorType) {
@@ -624,7 +620,6 @@ public class BasePage extends BasePageNopCommerceUI {
         waitForElementClickable(driver, BasePageNopCommerceUI.HOME_PAGE_LINK);
         clickToElement(driver, BasePageNopCommerceUI.HOME_PAGE_LINK);
         return PageGeneratorManager.getUserHomePage(driver);
-
     }
 
 }

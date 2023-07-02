@@ -130,7 +130,6 @@ public class MyAccountFunction extends BaseTest {
         Assert.assertEquals(addressPage.isStreet2Displayed(), address2);
         Assert.assertEquals(addressPage.isCountryDisplayed(), addressCountry);
 
-
     }
 
 

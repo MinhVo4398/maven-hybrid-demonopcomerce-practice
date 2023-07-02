@@ -55,7 +55,6 @@ public class Wishlist_Compare_RecentView extends BaseTest {
 
         // Verify Product dc add vao thanh cong
         wishListPage.isProductNameDisplayed();
-
     }
 
     @Test
@@ -82,7 +81,6 @@ public class Wishlist_Compare_RecentView extends BaseTest {
         wishListPage.checkToRemoveButton();
 
         Assert.assertEquals(wishListPage.getMessageAtWishlisgPage(), "The wishlist is empty!");
-
     }
 
     @Test

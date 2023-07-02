@@ -21,10 +21,8 @@ public class Sort_Paging_Function extends BaseTest {
     @BeforeClass
     public void beforeClass(@Optional("local") String envName, @Optional("dev") String serverName, @Optional("chrome") String browserName, @Optional("localhost") String ipAddress, @Optional("4444") String portNumber, @Optional("Windows") String osName, @Optional("10") String osVersion) {
 
-
         driver = getBrowserDriver(envName, serverName, browserName, ipAddress, portNumber, osName, osVersion);
         homePage = PageGeneratorManager.getUserHomePage(driver);
-
 
         // Login
         emailAddress = Register_Success_Global.EMAIL_ADDRESS;
@@ -35,30 +33,24 @@ public class Sort_Paging_Function extends BaseTest {
 
         loginPage.inputToPasswordTextbox(Register_Success_Global.PASSWORD);
 
-
         homePage = loginPage.clickToLoginButton();
-
     }
 
     @Test
     public void TC_01_Sort_With_Name_A_To_Z() {
-
         homePage.clickToNotebookLink();
         homePage.selectSortDropdown("Name: A to Z");
         homePage.sleepInSecond(3);
 
         // Verify sort A-Z
         homePage.isDataSortedAscending();
-
     }
 
     @Test
     public void TC_02_Sort_With_Name_Z_To_A() {
-
         homePage.clickToNotebookLink();
         homePage.selectSortDropdown("Name: Z to A");
         homePage.sleepInSecond(3);
-
         // Verify sort Z-A
         homePage.isDataSortedDesending();
 
@@ -66,23 +58,18 @@ public class Sort_Paging_Function extends BaseTest {
 
     @Test
     public void TC_03_Sort_With_Price_Low_High() {
-
         homePage.clickToNotebookLink();
         homePage.selectSortDropdown("Price: Low to High");
         homePage.sleepInSecond(3);
-
         // Verify
         homePage.isPriceSortLowToHigh();
-
     }
 
     @Test
     public void TC_04_Sort_With_Price_High_To_Low() {
-
         homePage.clickToNotebookLink();
         homePage.selectSortDropdown("Price: High to Low");
         homePage.sleepInSecond(3);
-
         // Verify Sort
         homePage.isPriceSortHighToLow();
     }
@@ -91,17 +78,13 @@ public class Sort_Paging_Function extends BaseTest {
         homePage.clickToNotebookLink();
         homePage.selectDisplayPerPageDropdown("3");
         homePage.sleepInSecond(5);
-
         // Verify 3 product
         Assert.assertEquals(homePage.isProductDisplay(), 3);
-        ;
-
         // Verify next icon at Page 1
         Assert.assertTrue(homePage.isNextPageIconDisplayed());
         homePage.clickToNextPageIcon();
         // Verify previous icon at Page 2
         Assert.assertTrue(homePage.isPreviousPageIconDisplayed());
-
     }
 
     @Test
@@ -109,8 +92,6 @@ public class Sort_Paging_Function extends BaseTest {
         homePage.clickToNotebookLink();
         // Verify 6 product
         Assert.assertEquals(homePage.isProductDisplay(), 6);
-        ;
-
         // Verify ko xuất hiện paging
         Assert.assertTrue(homePage.isPagingUnDisplayed());
     }
@@ -124,7 +105,6 @@ public class Sort_Paging_Function extends BaseTest {
         // Verify ko xuất hiện paging
         Assert.assertTrue(homePage.isPagingUnDisplayed());
     }
-
 
     @AfterClass
     public void AfterClass() {

@@ -2,6 +2,7 @@ package pageObjects.usernopcommerce;
 
 import commons.BasePage;
 import commons.PageGeneratorManager;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pageUIs.HomePageUI;
@@ -28,7 +29,7 @@ public class UserHomePageObject extends BasePage {
 
     }
 
-
+    @Step("Open login page")
     public UserLoginPageObject openLoginPage() {
         waitForElementClickable(driver, HomePageUI.LOGIN_LINK);
         clickToElement(driver, HomePageUI.LOGIN_LINK);

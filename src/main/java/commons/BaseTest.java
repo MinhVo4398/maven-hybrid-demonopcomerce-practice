@@ -1,17 +1,23 @@
 package commons;
 
 import factoryEnvironment.*;
+import org.apache.commons.io.FileUtils;
 import org.joda.time.DateTime;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.Reporter;
+import org.testng.annotations.BeforeSuite;
+import reportConfig.VerificationFailures;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     private WebDriver driver;
-
 
     public WebDriver getDriverInstance() {
         return this.driver;
@@ -90,52 +96,52 @@ public class BaseTest {
         return rd.nextInt(99999);
 
     }
-  /*  protected boolean verifyTrue(boolean condition) {
+
+    protected boolean verifyTrue(boolean condition) {
         boolean pass = true;
         try {
             Assert.assertTrue(condition);
-            log.info(" -------------------------- PASSED -------------------------- ");
+            //  log.info(" -------------------------- PASSED -------------------------- ");
         } catch (Throwable e) {
             pass = false;
-            log.info(" -------------------------- FAILED -------------------------- ");
+            //   log.info(" -------------------------- FAILED -------------------------- ");
             // Add lỗi vào ReportNG
             VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
             Reporter.getCurrentTestResult().setThrowable(e);
         }
         return pass;
     }
-*/
 
 
-/*    protected boolean verifyFalse(boolean condition) {
+    protected boolean verifyFalse(boolean condition) {
         boolean pass = true;
         try {
 
             Assert.assertFalse(condition);
-            log.info(" -------------------------- PASSED -------------------------- ");
+            // log.info(" -------------------------- PASSED -------------------------- ");
         } catch (Throwable e) {
             pass = false;
-            log.info(" -------------------------- FAILED -------------------------- ");
+            // log.info(" -------------------------- FAILED -------------------------- ");
             VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
             Reporter.getCurrentTestResult().setThrowable(e);
         }
         return pass;
-    }*/
+    }
 
 
-    /*   protected boolean verifyEquals(Object actual, Object expected) {
-           boolean pass = true;
-           try {
-               Assert.assertEquals(actual, expected);
-               log.info(" -------------------------- PASSED -------------------------- ");
-           } catch (Throwable e) {
-               pass = false;
-               log.info(" -------------------------- FAILED -------------------------- ");
-               VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
-               Reporter.getCurrentTestResult().setThrowable(e);
-           }
+    protected boolean verifyEquals(Object actual, Object expected) {
+        boolean pass = true;
+        try {
+            Assert.assertEquals(actual, expected);
+            //   log.info(" -------------------------- PASSED -------------------------- ");
+        } catch (Throwable e) {
+            pass = false;
+            // log.info(" -------------------------- FAILED -------------------------- ");
+            VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
+            Reporter.getCurrentTestResult().setThrowable(e);
+        }
            return pass;
-       }*/
+    }
     protected void closeBrowserAndDriver(String envName) {
         // Trên cloud thì k có cmd dc
         if (envName.equals("local") || envName.equals("grid")) {
@@ -241,6 +247,36 @@ public class BaseTest {
         }
     }
 
+    public void deleteAllFileInFolder() {
+        try {
+            String pathFolderDownload = GlobalConstants.PROJECT_PATH + "/allure-json";
+            File file = new File(pathFolderDownload);
+            File[] listOfFiles = file.listFiles();
+
+            for (int i = 0; i < listOfFiles.length; ++i) {
+                if (listOfFiles[i].isFile()) {
+                    System.out.println(listOfFiles[i].getName());
+                    (new File(listOfFiles[i].toString())).delete();
+                }
+            }
+        } catch (Exception var5) {
+            System.out.print(var5.getMessage());
+        }
+
+    }
+
+    @BeforeSuite
+    public void initBeforeSuite() {
+        this.deleteAllFileInFolder();
+    }
+
+    public String getScreenshot(String testCaseName, WebDriver driver) throws IOException {
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        File file = new File(System.getProperty("user.dir") + "//reports//" + testCaseName + ".png");
+        FileUtils.copyFile(source, file);
+        return System.getProperty("user.dir") + "//reports//" + testCaseName + ".png";
+    }
 
 }
 

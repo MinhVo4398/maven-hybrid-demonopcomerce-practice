@@ -2,7 +2,8 @@
 <suite parallel="false" thread-count="2" name="NopComerce_Demo_Local">
 
     <listeners>
-        <listener class-name="reportConfig.ExtentTestListener"/>
+        <!--        <listener class-name="reportConfig.ExtentTestListener"/>-->
+        <listener class-name="reportConfig.AllureTestListener"/>
     </listeners>
 
     <!-- Global-->
@@ -13,11 +14,9 @@
         <parameter name="browser" value="h_chrome"/>
         <classes>
             <class name="com.usernopcommerce.register.Register_Success_Global"/>
-    <class name="com.usernopcommerce.login.LoginFunction"/>
+            <class name="com.usernopcommerce.login.LoginFunction"/>
         </classes>
     </test>
-
-
 
 
 </suite>
