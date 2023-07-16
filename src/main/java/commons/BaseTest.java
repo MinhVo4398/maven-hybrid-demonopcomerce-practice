@@ -5,6 +5,7 @@ import org.joda.time.DateTime;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.BeforeSuite;
 import reportConfig.allureConfig.VerificationFailures;
 
 import java.io.File;
@@ -261,7 +262,7 @@ public class BaseTest {
 
     }
 
- //   @BeforeSuite
+    @BeforeSuite
     public void initBeforeSuite() {
         this.deleteAllFileInFolder();
     }
