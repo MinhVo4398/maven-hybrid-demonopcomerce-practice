@@ -8,7 +8,7 @@ import pageObjects.usernopcommerce.UserHomePageObject;
 import pageObjects.usernopcommerce.UserRegisterPageObject;
 import utilities.DataHelper;
 
-public class Register_Success_Global extends BaseTest {
+public class Register_Success_Global_Test extends BaseTest {
 
     private WebDriver driver;
     private String firstName, lastName;

@@ -13,8 +13,8 @@
     <test name="Run on CHROME">
         <parameter name="browser" value="h_chrome"/>
         <classes>
-            <class name="com.usernopcommerce.register.Register_Success_Global"/>
-            <class name="com.usernopcommerce.whishlist.Wishlist_Compare_RecentView"/>
+            <class name="com.usernopcommerce.register.Register_Success_Global_Test"/>
+            <class name="com.usernopcommerce.wishlist.Wishlist_Compare_RecentView_Test"/>
         </classes>
     </test>
 

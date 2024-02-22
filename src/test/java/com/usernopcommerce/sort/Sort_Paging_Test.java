@@ -1,6 +1,6 @@
 package com.usernopcommerce.sort;
 
-import com.usernopcommerce.register.Register_Success_Global;
+import com.usernopcommerce.register.Register_Success_Global_Test;
 import commons.BaseTest;
 import commons.PageGeneratorManager;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +10,7 @@ import pageObjects.usernopcommerce.UserHomePageObject;
 import pageObjects.usernopcommerce.UserLoginPageObject;
 import pageObjects.usernopcommerce.UserSearchPageObject;
 
-public class Sort_Paging_Function extends BaseTest {
+public class Sort_Paging_Test extends BaseTest {
     WebDriver driver;
     UserHomePageObject homePage;
     UserLoginPageObject loginPage;
@@ -25,13 +25,13 @@ public class Sort_Paging_Function extends BaseTest {
         homePage = PageGeneratorManager.getUserHomePage(driver);
 
         // Login
-        emailAddress = Register_Success_Global.EMAIL_ADDRESS;
-        password = Register_Success_Global.EMAIL_ADDRESS;
+        emailAddress = Register_Success_Global_Test.EMAIL_ADDRESS;
+        password = Register_Success_Global_Test.EMAIL_ADDRESS;
         loginPage = homePage.openLoginPage();
 
-        loginPage.inputToEmailTextbox(Register_Success_Global.EMAIL_ADDRESS);
+        loginPage.inputToEmailTextbox(Register_Success_Global_Test.EMAIL_ADDRESS);
 
-        loginPage.inputToPasswordTextbox(Register_Success_Global.PASSWORD);
+        loginPage.inputToPasswordTextbox(Register_Success_Global_Test.PASSWORD);
 
         homePage = loginPage.clickToLoginButton();
     }

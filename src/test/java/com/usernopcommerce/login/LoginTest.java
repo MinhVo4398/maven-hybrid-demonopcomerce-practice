@@ -9,7 +9,7 @@ import pageObjects.usernopcommerce.UserLoginPageObject;
 import pageObjects.usernopcommerce.UserRegisterPageObject;
 import utilities.DataHelper;
 
-public class LoginFunction extends BaseTest {
+public class LoginTest extends BaseTest {
     WebDriver driver;
     private String invalidEmail;
     DataHelper dataHelper;

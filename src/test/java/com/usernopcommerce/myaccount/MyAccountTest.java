@@ -1,6 +1,6 @@
 package com.usernopcommerce.myaccount;
 
-import com.usernopcommerce.register.Register_Success_Global;
+import com.usernopcommerce.register.Register_Success_Global_Test;
 import commons.BaseTest;
 import commons.PageGeneratorManager;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +9,7 @@ import org.testng.annotations.*;
 import pageObjects.usernopcommerce.*;
 import utilities.DataHelper;
 
-public class MyAccountFunction extends BaseTest {
+public class MyAccountTest extends BaseTest {
     WebDriver driver;
     private String firstName, lastName, emailAddress, updatedEmail, day, month, year, compayName, password, confirmPassword,
             addressFirstName, addressLastName, addressEmail, addressCompany, addressCountry, addressState, addressCity, address1, address2,
@@ -58,13 +58,13 @@ public class MyAccountFunction extends BaseTest {
 
 
         // Login
-        emailAddress = Register_Success_Global.EMAIL_ADDRESS;
-        password = Register_Success_Global.EMAIL_ADDRESS;
+        emailAddress = Register_Success_Global_Test.EMAIL_ADDRESS;
+        password = Register_Success_Global_Test.EMAIL_ADDRESS;
         loginPage = homePage.openLoginPage();
 
-        loginPage.inputToEmailTextbox(Register_Success_Global.EMAIL_ADDRESS);
+        loginPage.inputToEmailTextbox(Register_Success_Global_Test.EMAIL_ADDRESS);
 
-        loginPage.inputToPasswordTextbox(Register_Success_Global.PASSWORD);
+        loginPage.inputToPasswordTextbox(Register_Success_Global_Test.PASSWORD);
 
 
         homePage = loginPage.clickToLoginButton();

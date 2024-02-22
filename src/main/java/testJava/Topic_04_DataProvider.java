@@ -1,6 +1,5 @@
 package testJava;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -23,14 +22,11 @@ public class Topic_04_DataProvider {
     @BeforeClass
     public void beforeClass(String browserName) {
         if (browserName.equals("chrome")) {
-            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         } else if (browserName.equals("edge")) {
-            WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
 
         } else {
-            WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
         }
 
@@ -38,7 +34,7 @@ public class Topic_04_DataProvider {
     }
 
     @Test(dataProvider = "user_pass")
-    public void TC_01_LoginToSystem(String username, String password) throws InterruptedException {
+    public void TC_01_LoginToSystem(String username, String password)  {
         driver.get("http://live.techpanda.org/index.php/customer/account/login/");
 
         driver.findElement(emailTextbox).sendKeys(username);

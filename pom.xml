@@ -21,10 +21,9 @@
         <maven.compiler.source>17</maven.compiler.source>
 
         <!-- Global variable for dependencies -->
-        <webdriver.version>3.141.59</webdriver.version>
-        <testng.version>6.14.3</testng.version>
+        <webdriver.version>4.17.0</webdriver.version>
+        <testng.version>7.7.1</testng.version>
         <jackson.version>2.10.0</jackson.version>
-        <webdrivermanager.version>5.0.2</webdrivermanager.version>
         <extent.version>5.0.8</extent.version>
         <faker.version>1.0.1</faker.version>
         <log4j.version>1.2.16</log4j.version>
@@ -58,17 +57,6 @@
             <version>${webdriver.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>${webdrivermanager.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>jcl-over-slf4j</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
 
         <dependency>
             <groupId>org.uncommons</groupId>

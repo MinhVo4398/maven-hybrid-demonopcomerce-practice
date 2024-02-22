@@ -1,6 +1,5 @@
 package com.usernopcommerce.register;
 
-import com.aventstack.extentreports.Status;
 import commons.BaseTest;
 import commons.PageGeneratorManager;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +11,7 @@ import utilities.DataHelper;
 
 import java.lang.reflect.Method;
 
-public class Register_Validation extends BaseTest {
+public class Register_Validation_Test extends BaseTest {
 
     private WebDriver driver;
     private String firstName, lastName, validPassword, emailAddress, invalidEmail, invalidPassword;
