@@ -56,8 +56,7 @@ public class LoginTest extends BaseTest {
         loginPage.clickToLoginButton();
 
         System.out.println("LoginPage: Step 03 Verify Please enter your email");
-        //  Assert.assertEquals(loginPage.getErrorMessageAtEmailTextBox(), "Please enter your email!");
-        verifyEquals(loginPage.getErrorMessageAtEmailTextBox(), "Please enter your emai!ll");
+        verifyEquals(loginPage.getErrorMessageAtEmailTextBox(), "Please enter your email");
 
     }
 
@@ -74,7 +73,7 @@ public class LoginTest extends BaseTest {
         loginPage.clickToLoginButton();
 
         System.out.println("Login Page: Step 04 Verify wronng email");
-        verifyEquals(loginPage.getErrorMessageAtEmailTextBox(), "Wrong email!");
+        verifyEquals(loginPage.getErrorMessageAtEmailTextBox(), "Wrong email");
     }
 
     @Test
@@ -107,7 +106,6 @@ public class LoginTest extends BaseTest {
 
         System.out.println("Login Page Step 04:  Verify");
         verifyEquals(loginPage.getErrorMessageUnsuccessfull(), "Login was unsuccessful. Please correct the errors and try again.\nThe credentials provided are incorrect");
-
     }
 
     @Test
@@ -145,6 +143,4 @@ public class LoginTest extends BaseTest {
     public void afterClass() {
         driver.quit();
     }
-
-
 }
