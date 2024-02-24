@@ -39,3 +39,6 @@ build/
 /allure-results/
 /allure-json/
 /allure-report/
+
+##idea
+.idea/
