@@ -34,6 +34,8 @@
         - name: CI test
           run: |
             mvn clean test
+          env:
+                     CHROME_HEADLESS: TRUE
         - uses: actions/upload-artifact@v3
           if: failure()
           with:

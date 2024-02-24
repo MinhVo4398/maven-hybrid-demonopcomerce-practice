@@ -19,6 +19,10 @@ public class ChromeDriverManager implements BrowserFactory {
         options.addArguments("--disable-geolocation");
         options.setExperimentalOption("useAutomationExtension", false);
         options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+        // this code to fix issue crash on github action
+        if("TRUE".equalsIgnoreCase(System.getenv("CHROME_HEADLESS"))) {
+            options.addArguments("headless");
+        }
 
         HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
         chromePrefs.put("profile.default_content_settings.popups", 0);
