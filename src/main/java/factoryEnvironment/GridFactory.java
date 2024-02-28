@@ -31,7 +31,6 @@ public class GridFactory {
         DesiredCapabilities capabilitity = null;
 
         if (browserList == BrowserList.FIREFOX) {
-          // capabilitity = DesiredCapabilities.firefox();
             capabilitity.setBrowserName("firefox");
             capabilitity.setPlatform(Platform.ANY);
 
@@ -39,7 +38,6 @@ public class GridFactory {
             options.merge(capabilitity);
 
         } else if (browserList == BrowserList.CHROME) {
-          //  capabilitity = DesiredCapabilities.();
             capabilitity.setBrowserName("chrome");
             capabilitity.setPlatform(Platform.ANY);
 
@@ -48,23 +46,6 @@ public class GridFactory {
 
         } else if (browserList == BrowserList.EDGE_CHROMIUM) {
             driver = new EdgeDriver();
-        } else if (browserList == BrowserList.COCOC) {
-            // Cốc Cốc browser trừ đi 5-6 version ra ChromeDriver
-
-            ChromeOptions options = new ChromeOptions();
-            if (GlobalConstants.OS_NAME.startsWith("Window")) {
-                options.setBinary("C:\\Program Files\\CocCoc\\Browser\\Application\\browser.exe");
-            } else {
-                options.setBinary("...");
-            }
-            driver = new ChromeDriver(options);
-
-        } else if (browserList == BrowserList.BRAVE) {
-            // Brave browser version nào dùng chromedriver version đó
-            ChromeOptions options = new ChromeOptions();
-            options.setBinary("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
-            driver = new ChromeDriver(options);
-
         } else {
             throw new RuntimeException("Please enter correct browser name!");
         }

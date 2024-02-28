@@ -26,7 +26,6 @@ public class LocalFactory {
             case SAFARI:
                 driver = new SafariDriverManager().getBrowserDriver();
                 break;
-
             case EDGE_CHROMIUM:
                 driver = new EdgeDriverManager().getBrowserDriver();
                 break;
@@ -34,7 +33,7 @@ public class LocalFactory {
                 driver = new HeadlessChromeDriverManager().getBrowserDriver();
                 break;
             case H_FIREFOX:
-                driver = new HeadlessChromeDriverManager().getBrowserDriver();
+                driver = new HeadlessFirefoxDriverManager().getBrowserDriver();
                 break;
             default:
                 throw new BrowserNotSupportedException(browserName);

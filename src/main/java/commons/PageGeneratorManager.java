@@ -49,6 +49,4 @@ public class PageGeneratorManager {
     public static UserCompareProductPageObject getUserComapreProductlistPage(WebDriver driver) {
         return new UserCompareProductPageObject(driver);
     }
-
-
 }

@@ -12,6 +12,5 @@ public class EdgeDriverManager implements BrowserFactory {
         EdgeOptions options = new EdgeOptions();
         // Gọi options vì sau này cần setting gì
         return new EdgeDriver(options);
-
     }
 }

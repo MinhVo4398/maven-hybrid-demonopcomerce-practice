@@ -13,7 +13,6 @@ public class DataHelper {
 
     }
 
-
     public String getFirstName() {
         return faker.address().firstName();
     }
@@ -57,5 +56,4 @@ public class DataHelper {
         return faker.country().name();
 
     }
-
 }
