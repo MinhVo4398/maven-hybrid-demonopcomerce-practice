@@ -90,10 +90,10 @@ public class BaseTest {
         try {
 
             Assert.assertFalse(condition);
-            // log.info(" -------------------------- PASSED -------------------------- ");
+             logger.info(" -------------------------- PASSED -------------------------- ");
         } catch (Throwable e) {
             pass = false;
-            // log.info(" -------------------------- FAILED -------------------------- ");
+            logger.info(" -------------------------- FAILED -------------------------- ");
             VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
             Reporter.getCurrentTestResult().setThrowable(e);
         }
