@@ -18,7 +18,7 @@ pipeline {
     stage('Build') {
             steps {
                 script {
-                        def javaHome = tool 'Java 17'
+                        def javaHome = tool 'Java 11'
                         def mvnHome = tool 'Maven 3.8.6'
 
                         env.JAVA_HOME = javaHome
