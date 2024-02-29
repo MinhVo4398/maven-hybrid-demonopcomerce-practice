@@ -47,7 +47,7 @@ public class LoginTest extends BaseTest {
         homePage = registerPage.clickContinueButton();
     }
 
-    @Test
+    @Test(description = "Login with Empty data")
     public void TC_01_Login_With_Emtpy_Data() {
         System.out.println("HomePage : Step 01 Click login Page");
         loginPage = homePage.openLoginPage();
@@ -60,7 +60,7 @@ public class LoginTest extends BaseTest {
 
     }
 
-    @Test
+    @Test(description = "Login with invalid email address")
     public void TC_02_Login_Invalid_Email() {
         loginPage = homePage.openLoginPage();
         loginPage.inputToEmailTextbox(invalidEmail);
@@ -68,7 +68,7 @@ public class LoginTest extends BaseTest {
         verifyEquals(loginPage.getErrorMessageAtEmailTextBox(), "Wrong email");
     }
 
-    @Test
+    @Test(description = "Login with email not found in system")
     public void TC_03_Login_Email_Not_Found() {
         loginPage = homePage.openLoginPage();
         loginPage.inputToEmailTextbox(notFoundEmail);
@@ -76,7 +76,7 @@ public class LoginTest extends BaseTest {
         verifyEquals(loginPage.getErrorMessageUnsuccessfull(), "Login was unsuccessful. Please correct the errors and try again.\nNo customer account found");
     }
 
-    @Test
+    @Test(description = "Login with existing email and empty password")
     public void TC_04_Login_Existing_Email_Empty_Pasword() {
         loginPage = homePage.openLoginPage();
         loginPage.inputToEmailTextbox(emailAddress);
@@ -85,7 +85,7 @@ public class LoginTest extends BaseTest {
         verifyEquals(loginPage.getErrorMessageUnsuccessfull(), "Login was unsuccessful. Please correct the errors and try again.\nThe credentials provided are incorrect");
     }
 
-    @Test
+    @Test(description = "Login with existing email but incorrect password")
     public void TC_05_Login_Existing_Email_Incorrect_Password() {
         loginPage = homePage.openLoginPage();
         loginPage.inputToEmailTextbox(emailAddress);
@@ -94,7 +94,7 @@ public class LoginTest extends BaseTest {
         verifyEquals(loginPage.getErrorMessageUnsuccessfull(), "Login was unsuccessful. Please correct the errors and try again.\nThe credentials provided are incorrect");
     }
 
-    @Test
+    @Test(description = "Login successfully with valid email and valid password")
     public void TC_06_Login_Valid_Email_Password() {
         loginPage = homePage.openLoginPage();
         loginPage.inputToEmailTextbox(emailAddress);

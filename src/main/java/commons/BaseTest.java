@@ -2,6 +2,8 @@ package commons;
 
 
 import factoryEnvironment.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -11,11 +13,12 @@ import utilities.ConfProperties;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     private WebDriver driver;
+    public static final Logger logger = LogManager.getLogger(ConfProperties.class);
 
     public WebDriver getDriverInstance() {
         return this.driver;
@@ -43,7 +46,7 @@ public class BaseTest {
                 driver = new LocalFactory(browserName).createDriver();
                 break;
         }
-        driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT));
         driver.manage().window().maximize();
         driver.get(getEnvironmentUrl(serverName));
         return driver;
@@ -178,11 +181,6 @@ public class BaseTest {
 
     }
 
-
-
-
-
-
     public void sleepInSecond(long time) {
         try {
             Thread.sleep(time * 1000);
@@ -204,9 +202,9 @@ public class BaseTest {
                 }
             }
         } catch (Exception var5) {
+            logger.error(var5.getMessage());
             System.out.print(var5.getMessage());
         }
-
     }
 
     @BeforeSuite
