@@ -28,7 +28,7 @@ pipeline {
 						stage('Stage 4 -Create build') {
 							steps {
 								//cmd to create the build of project
-                                bat "mvn testpackage"
+                                sh "mvn testpackage"
 							}
 						}
 
