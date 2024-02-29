@@ -4,7 +4,7 @@ pipeline {
           cron('0 21 * * *')
       }
   parameters {
-    string(name: 'BRANCH', defaultValue: 'lenovo', description: 'Git branch to build')
+    string(name: 'BRANCH', defaultValue: 'master', description: 'Git branch to build')
     string(name: 'TAGS', defaultValue: '@Regression', description: 'The test suite to run')
     string(name: 'ENV', defaultValue: 'AUTO', description: 'Environment test data set')
     choice(name: 'DRIVERTYPE', choices: ['WINDOW_CHROME', 'WINDOW_FIREFOX','WINDOW_EDGE', 'MAC_SAFARI', 'MAC_CHROME', 'MAC_FIREFOX','IOS_SAFARI', 'ANDROID_CHROME' ], description: 'Environment to run tests on')
@@ -12,7 +12,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git branch: params.BRANCH, url: 'https://Coq71755@bitbucket.org/coq71755/selenium_poc.git'
+        git branch: params.BRANCH, url: 'https://github.com/MinhVo4398/maven-hybrid-demonopcomerce-practice.git'
       }
     }
     stage('Build') {
