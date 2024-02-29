@@ -1,20 +1,12 @@
 pipeline {
     agent any
+    tools
+    {
+        maven 'apache-maven-3.0.1'
+    }
 
     stages {
-      stage('Build') {
-                steps {
-                    script {
-                            def javaHome = tool 'Java 17'
-                            def mvnHome = tool 'Maven 3.8.6'
 
-                            env.JAVA_HOME = javaHome
-                            env.PATH = "${mvnHome}/bin:${env.JAVA_HOME}/bin:${env.PATH}"
-
-                    }
-                    sh 'mvn clean package'
-                }
-            }
         stage('Test') {
             steps {
                 sh "mvn clean test"
