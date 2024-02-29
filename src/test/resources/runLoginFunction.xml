@@ -11,7 +11,7 @@
     <parameter name="serverName" value="dev"/>
 
     <test name="Run on CHROME">
-        <parameter name="browser" value="chrome"/>
+        <parameter name="browser" value="h_chrome"/>
         <classes>
             <class name="com.usernopcommerce.register.Register_Success_Global_Test"/>
             <class name="com.usernopcommerce.login.LoginTest"/>

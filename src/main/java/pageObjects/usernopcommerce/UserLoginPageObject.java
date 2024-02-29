@@ -23,13 +23,13 @@ public class UserLoginPageObject extends BasePage {
         return PageGeneratorManager.getUserHomePage(driver);
     }
 
-
+    @Step("User input to email textbox")
     public void inputToEmailTextbox(String emailAddress) {
         waitForElementVisible(driver, LoginPageUI.EMAIL_TEXTBOX);
         sendKeyToElement(driver, LoginPageUI.EMAIL_TEXTBOX, emailAddress);
     }
 
-
+    @Step("User input to password textbox")
     public void inputToPasswordTextbox(String password) {
         waitForElementVisible(driver, LoginPageUI.PASSWORD_TEXTBOX);
         sendKeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, password);

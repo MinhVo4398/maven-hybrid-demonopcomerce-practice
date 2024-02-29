@@ -62,80 +62,44 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void TC_02_Login_Invalid_Email() {
-        System.out.println("HomePage : Step 01 Click login Page");
-        // Initialize Login Page
         loginPage = homePage.openLoginPage();
-
-        System.out.println("Login Page: Step 02 Input Invalid Email and Corect Password");
         loginPage.inputToEmailTextbox(invalidEmail);
-
-        System.out.println("Login Page Step 03: Click Login button");
         loginPage.clickToLoginButton();
-
-        System.out.println("Login Page: Step 04 Verify wronng email");
         verifyEquals(loginPage.getErrorMessageAtEmailTextBox(), "Wrong email");
     }
 
     @Test
     public void TC_03_Login_Email_Not_Found() {
-        System.out.println("HomePage : Step 01 Click login Page");
-        // Initialize Login Page
         loginPage = homePage.openLoginPage();
-
-        System.out.println("Login Page: Step 02 Input Invalid Email ");
         loginPage.inputToEmailTextbox(notFoundEmail);
-
-        System.out.println("Login Page Step 03: Click Login button");
         loginPage.clickToLoginButton();
-
-        System.out.println("Login Page Step 04:  Verify");
         verifyEquals(loginPage.getErrorMessageUnsuccessfull(), "Login was unsuccessful. Please correct the errors and try again.\nNo customer account found");
     }
 
     @Test
     public void TC_04_Login_Existing_Email_Empty_Pasword() {
-        System.out.println("HomePage : Step 01 Click login Page");
-        // Initialize Login Page
         loginPage = homePage.openLoginPage();
-        System.out.println("Login Page: Step 02 Input Existing Email and No input Password");
         loginPage.inputToEmailTextbox(emailAddress);
         loginPage.inputToPasswordTextbox("");
-
-        System.out.println("Login Page Step 03: Click Login button");
         loginPage.clickToLoginButton();
-
-        System.out.println("Login Page Step 04:  Verify");
         verifyEquals(loginPage.getErrorMessageUnsuccessfull(), "Login was unsuccessful. Please correct the errors and try again.\nThe credentials provided are incorrect");
     }
 
     @Test
     public void TC_05_Login_Existing_Email_Incorrect_Password() {
-        System.out.println("HomePage : Step 01 Click login Page");
         loginPage = homePage.openLoginPage();
-
-        System.out.println("Login Page: Step 02 Input Existing Email and No input Password");
         loginPage.inputToEmailTextbox(emailAddress);
         loginPage.inputToPasswordTextbox(invalidPassword);
-
-        System.out.println("Login Page Step 03: Click Login button");
         loginPage.clickToLoginButton();
-
-        System.out.println("Login Page Step 04:  Verify");
         verifyEquals(loginPage.getErrorMessageUnsuccessfull(), "Login was unsuccessful. Please correct the errors and try again.\nThe credentials provided are incorrect");
-
     }
 
     @Test
     public void TC_06_Login_Valid_Email_Password() {
-        System.out.println("HomePage : Step 01 Click login Page");
         loginPage = homePage.openLoginPage();
-        System.out.println("Login Page: Step 02 Input Existing Email and No input Password");
         loginPage.inputToEmailTextbox(emailAddress);
         loginPage.inputToPasswordTextbox(validPassword);
-        System.out.println("Login Page Step 03: Click Login button");
         homePage = loginPage.clickToLoginButton();
-
-        System.out.println("HomePahe - Step 04: Verify My account link  hiển thị");
         verifyTrue(homePage.isMyAccountLinkDisplayed());
     }
 

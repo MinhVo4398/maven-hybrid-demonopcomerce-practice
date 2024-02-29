@@ -32,9 +32,7 @@ public class MyAccountTest extends BaseTest {
         year = "1979";
         firstName = dataHelper.getFirstName();
         lastName = dataHelper.getLastName();
-        /*  emailAddress = dataHelper.getEmailAddress();*/
         compayName = dataHelper.getCompanyName();
-        /* password = dataHelper.getPassword();*/
         confirmPassword = dataHelper.getPassword();
         // Precondition - Register success
 
@@ -45,7 +43,7 @@ public class MyAccountTest extends BaseTest {
         addressCompany = dataHelper.getCompanyName();
         addressCountry = "Australia";
         addressState = "Other";
-        addressCity = dataHelper.getCtityName();
+        addressCity = dataHelper.getCityName();
         address1 = dataHelper.getAddress();
         address2 = dataHelper.getAddress();
         addressZip = dataHelper.getZipCode();
@@ -61,15 +59,9 @@ public class MyAccountTest extends BaseTest {
         emailAddress = Register_Success_Global_Test.EMAIL_ADDRESS;
         password = Register_Success_Global_Test.EMAIL_ADDRESS;
         loginPage = homePage.openLoginPage();
-
         loginPage.inputToEmailTextbox(Register_Success_Global_Test.EMAIL_ADDRESS);
-
         loginPage.inputToPasswordTextbox(Register_Success_Global_Test.PASSWORD);
-
-
         homePage = loginPage.clickToLoginButton();
-
-
     }
 
     @Test
@@ -87,7 +79,6 @@ public class MyAccountTest extends BaseTest {
         customerInforPage.clickToSaveButton();
 
         // Verify update thanh cong
-
         Assert.assertEquals(customerInforPage.isFemaleRadioButtonUpdate("value"), "F");
         Assert.assertEquals(customerInforPage.isFirstNameTextboxUpdate("value"), "Automation");
         Assert.assertEquals(customerInforPage.isLastNameTextboxUpdate("value"), "FC");
@@ -96,8 +87,6 @@ public class MyAccountTest extends BaseTest {
         Assert.assertEquals(customerInforPage.isYearDropdownValueUpdate("1991"), "1991");
         Assert.assertEquals(customerInforPage.isEmailAddressUpdate("value"), updatedEmail);
         Assert.assertEquals(customerInforPage.isCompanyNameTextboxUpdate("value"), compayName);
-
-
     }
 
     @Test
@@ -124,30 +113,24 @@ public class MyAccountTest extends BaseTest {
         Assert.assertEquals(addressPage.isEmailDisplayed(), "Email: " + addressEmail);
         Assert.assertEquals(addressPage.isFaxNumberDisplayed(), "Fax number: " + addressFaxNumber);
         Assert.assertEquals(addressPage.isZipCodeDisplayed(), addressCity + ", " + addressZip);
-
         Assert.assertEquals(addressPage.isCompanyDisplayed(), addressCompany);
         Assert.assertEquals(addressPage.isStreet1Displayed(), address1);
         Assert.assertEquals(addressPage.isStreet2Displayed(), address2);
         Assert.assertEquals(addressPage.isCountryDisplayed(), addressCountry);
-
     }
 
-
+    @Test
     public void TC_03_My_Product_Review() {
         //Address hover vào computer -> click desktop => homePage
         homePage = addressPage.clickToComputerProductLinkAndDeskTopLink();
-
-
         // Click To Product : your old computer
         homePage.clickToComputerProduct();
-
 
         // click to add to review link
         homePage.clickToAddYourReviewLink();
 
         //SendKey vao review title and review text
         homePage.inputToReviewTitle("Review Title");
-
         homePage.inputToReviewText("Review Text AVC");
 
         // Click to Submit Review button
@@ -156,11 +139,9 @@ public class MyAccountTest extends BaseTest {
         customerInforPage = homePage.openMyAccountPage(); // customerInfor
 
         myProductReviewPage = customerInforPage.openMyProductReviewPage(driver);
-
         // Verify
         Assert.assertEquals(myProductReviewPage.isReviewTitleDisplayed(), "Review Title");
         Assert.assertEquals(myProductReviewPage.isReviewTextDisplayed(), "Review Text AVC");
-
         sleepInSecond(5);
     }
 
